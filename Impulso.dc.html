@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ===== SEO / Primary meta ===== -->
+<title>Reac Studio — Más gente te encuentra, te consulta y te compra</title>
+<meta name="description" content="Reac Studio diseña sitios web y estrategias que hacen que más gente te encuentre, te consulte y te compre, mientras vos te enfocás en lo que sabés hacer. Pedí tu diagnóstico gratis.">
+<meta name="author" content="Reac Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#070712">
+<!-- TODO dominio: cuando lo tengas, descomentá -> <link rel="canonical" href="https://TU-DOMINIO/"> -->
+
+<!-- ===== Favicon (logo inline, sin request extra) ===== -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23070712'/%3E%3Crect x='30' y='30' width='40' height='40' rx='8' fill='%231F27EB'/%3E%3Ctext x='50' y='58' font-family='sans-serif' font-size='26' font-weight='700' fill='%23FDFCFE' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+<!-- ===== Open Graph ===== -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Reac Studio">
+<meta property="og:title" content="Reac Studio — Más gente te encuentra, te consulta y te compra">
+<meta property="og:description" content="Diseñamos sitios web y estrategias que hacen crecer tu negocio. Pedí tu diagnóstico gratis.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Reac Studio — diseño y desarrollo web">
+<!-- TODO dominio: cuando lo tengas, agregá -> <meta property="og:url" content="https://TU-DOMINIO/"> y volvé og:image absoluta: https://TU-DOMINIO/og-image.png -->
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reac Studio — Más gente te encuentra, te consulta y te compra">
+<meta name="twitter:description" content="Diseñamos sitios web y estrategias que hacen crecer tu negocio. Pedí tu diagnóstico gratis.">
+<meta name="twitter:image" content="og-image.png">
+
+<!-- ===== Structured data ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Reac Studio",
+  "description": "Estudio de diseño y desarrollo web. Hacemos que más gente te encuentre, te consulte y te compre.",
+  "areaServed": "AR",
+  "knowsLanguage": "es"
+}
+</script>
+
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#070712"/><rect x="30" y="30" width="40" height="40" rx="8" fill="#1F27EB"/><text x="50" y="58" font-family="sans-serif" font-size="26" font-weight="700" fill="#FDFCFE" text-anchor="middle">R</text></svg></template>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;background:#070712;}
+    body{-webkit-font-smoothing:antialiased;}
+    ::selection{background:#1F27EB;color:#FDFCFE;}
+    @keyframes beamMove{0%{left:-18%;opacity:0;}12%{opacity:1;}88%{opacity:1;}100%{left:118%;opacity:0;}}
+    @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
+    @keyframes floatBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+    /* Easing maestro: expo-out, desaceleración larga y sedosa (sin blur, con profundidad 3D) */
+    @keyframes heroInLeft{from{opacity:0; transform:translateX(-78px);}to{opacity:1; transform:translateX(0);}}
+    @keyframes heroInRight{0%{opacity:0; transform:perspective(1400px) translateX(96px) translateY(26px) rotateY(-11deg) scale(.9);}100%{opacity:1; transform:perspective(1400px) translateX(0) translateY(0) rotateY(0deg) scale(1);}}
+    @keyframes heroReveal{0%{opacity:0; clip-path:inset(0 0 100% 0); transform:translateY(22px);}100%{opacity:1; clip-path:inset(0 0 0 0); transform:translateY(0);}}
+    @keyframes heroPop{0%{opacity:0; transform:translateY(40px) scale(.8);}55%{opacity:1; transform:translateY(-8px) scale(1.055);}100%{opacity:1; transform:translateY(0) scale(1);}}
+    .hero-anim{opacity:0;}
+    @keyframes heroChar{0%{opacity:0; transform:perspective(700px) translateY(1.05em) rotateX(-55deg) scale(.92);}55%{opacity:1;}100%{opacity:1; transform:perspective(700px) translateY(0) rotateX(0deg) scale(1);}}
+    .hero-char{display:inline-block; opacity:0; transform-origin:50% 100%; animation:heroChar 1.15s cubic-bezier(.16,1,.3,1) forwards; will-change:transform,opacity;}
+    .hero-t1{animation:none;}
+    .hero-sub{animation:heroReveal 1.6s cubic-bezier(.16,1,.3,1) 1.3s forwards; will-change:transform,opacity;}
+    .hero-btn1{animation:heroPop 1.15s cubic-bezier(.34,1.5,.5,1) 1.85s forwards; will-change:transform,opacity;}
+    .hero-btn2{animation:heroPop 1.15s cubic-bezier(.34,1.5,.5,1) 2.02s forwards; will-change:transform,opacity;}
+    .hero-card{animation:heroInRight 1.75s cubic-bezier(.16,1,.3,1) .75s forwards; will-change:transform,opacity;}
+    @media (prefers-reduced-motion: reduce){.hero-anim,.hero-char{opacity:1 !important; animation:none !important; transform:none !important;}}
+    .reveal{opacity:0; transform:perspective(1500px) rotateX(9deg) translateY(68px) scale(.96); transform-origin:50% 100%; transition:opacity 1.5s cubic-bezier(.16,1,.3,1), transform 1.5s cubic-bezier(.16,1,.3,1); will-change:transform,opacity;}
+    .reveal.rv-left{transform:perspective(1500px) translateX(-78px) rotateY(9deg) scale(.96);}
+    .reveal.rv-right{transform:perspective(1500px) translateX(78px) rotateY(-9deg) scale(.96);}
+    .reveal.rv-scale{transform:scale(.88);}
+    .reveal.is-in{opacity:1; transform:none;}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1 !important; transform:none !important; filter:none !important;}}
+    @keyframes softPulse{0%,100%{opacity:.5;transform:scale(1);}50%{opacity:.85;transform:scale(1.08);}}
+    @keyframes bgDrift{0%{transform:rotate(-19deg) translate(0,0);}50%{transform:rotate(-19deg) translate(-4%,-3%);}100%{transform:rotate(-19deg) translate(0,0);}}
+    @keyframes drawLine{from{stroke-dashoffset:100;}to{stroke-dashoffset:0;}}
+    .imp-card{transition:transform .4s cubic-bezier(.34,1.56,.5,1), box-shadow .4s ease, border-color .35s ease; will-change:transform;}
+    .imp-card:hover{transform:scale(1.04) translateY(-9px); box-shadow:0 42px 86px -28px rgba(46,55,255,.55); z-index:2;}
+    .ib-dash-wrap{transition:transform .4s cubic-bezier(.34,1.56,.5,1); will-change:transform;}
+    .ib-dash-wrap:hover{transform:scale(1.03) translateY(-7px); z-index:2;}
+    .ib-dash-win{transition:box-shadow .4s ease, border-color .4s ease;}
+    .ib-dash-wrap:hover .ib-dash-win{box-shadow:0 38px 80px -28px rgba(46,55,255,.58) !important; border-color:rgba(110,116,255,.55) !important;}
+    @media (prefers-reduced-motion: reduce){.ib-dash-wrap:hover{transform:none !important;}}
+    .imp-cta:hover{transform:translateY(-2px);}
+    .imp-cta{transition:transform .25s ease, box-shadow .25s ease;}
+    .imp-faq:hover{border-color:#2E37FF !important; transform:scale(1.02) translateY(-5px);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    .imp-track{animation:marquee 36s linear infinite;}
+    .imp-marquee:hover .imp-track{animation-play-state:paused;}
+    .imp-testi{transition:transform .4s cubic-bezier(.34,1.56,.5,1), box-shadow .4s ease, border-color .4s ease; position:relative;}
+    .imp-testi:hover{transform:scale(1.06) translateY(-8px); box-shadow:0 42px 86px -28px rgba(46,55,255,.6); border-color:rgba(110,116,255,.6); z-index:2;}
+    .imp-led{position:relative;border-radius:28px;padding:1.5px;overflow:hidden;background:rgba(255,255,255,.07);display:flex;}
+    .imp-led::before{content:"";position:absolute;left:50%;top:50%;width:175%;height:175%;transform:translate(-50%,-50%);background:conic-gradient(from 0deg,transparent 0deg,transparent 276deg,rgba(46,55,255,.85) 316deg,#6E74FF 350deg,transparent 360deg);animation:ledSpin 4.5s linear infinite var(--ld,0s);}
+    .imp-led-inner{position:relative;z-index:1;border-radius:26.5px;flex:1;min-width:0;}
+    .imp-led-hot{padding:2px;box-shadow:0 30px 70px -24px rgba(46,55,255,.7);}
+    .imp-led-hot::before{background:conic-gradient(from 0deg,rgba(31,39,235,.3) 0deg,rgba(124,58,237,.35) 190deg,#2E37FF 290deg,#6E74FF 335deg,#2E37FF 360deg);}
+    @keyframes ledSpin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+    @keyframes knobMove{0%,42%{transform:translateX(0);}54%,100%{transform:translateX(22px);}}
+    @keyframes trackOn{0%,42%{background:#15182B;}54%,100%{background:#1F27EB;}}
+    @keyframes knobMove2{0%,30%{transform:translateX(22px);}42%,100%{transform:translateX(0);}}
+    @keyframes trackOn2{0%,30%{background:#7C3AED;}42%,100%{background:#15182B;}}
+    @keyframes progFill{0%{width:18%;}50%{width:88%;}100%{width:18%;}}
+    @keyframes progFill2{0%{width:64%;}50%{width:32%;}100%{width:64%;}}
+    @keyframes sliderMove{0%{left:6%;}50%{left:82%;}100%{left:6%;}}
+    @media(max-width:860px){.ib-stats{flex-direction:column !important;}.ib-bento{grid-template-columns:1fr 1fr !important;grid-auto-rows:150px !important;}.ib-bento .ib-bento-a{grid-column:span 2 !important;grid-row:span 1 !important;}}
+    .imp-flink{transition:color .25s ease, transform .25s ease; cursor:pointer;}
+    .imp-flink:hover{color:#FA3601 !important; transform:translateX(6px);}
+    .imp-soc{transition:transform .25s ease, background .25s ease, color .25s ease;}
+    .imp-soc:hover{background:linear-gradient(135deg,#1F27EB,#7C3AED); color:#FDFCFE; transform:scale(1.12) rotate(8deg);}
+    .ib-gauge-card{transition:transform .4s cubic-bezier(.34,1.56,.5,1), box-shadow .4s ease, border-color .4s ease; will-change:transform; cursor:pointer;}
+    .ib-gauge-card:hover{transform:scale(1.07) translateY(-8px); box-shadow:0 44px 90px -28px rgba(46,55,255,.75); border-color:rgba(110,116,255,.65);}
+    .ib-gauge-num{display:inline-block; transition:transform .4s cubic-bezier(.34,1.56,.5,1);}
+    .ib-gauge-card:hover .ib-gauge-num{transform:scale(1.12);}
+    .ib-stat-card{transition:transform .4s cubic-bezier(.34,1.56,.5,1), box-shadow .4s ease, border-color .4s ease; will-change:transform; cursor:pointer;}
+    .ib-stat-card:hover{transform:scale(1.05) translateY(-7px); box-shadow:0 40px 84px -26px rgba(46,55,255,.62); border-color:rgba(110,116,255,.6);}
+    .ib-stat-num{display:inline-block; transition:transform .4s cubic-bezier(.34,1.56,.5,1);}
+    .ib-stat-card:hover .ib-stat-num{transform:scale(1.1);}
+    .ib-bento-card{position:relative; transition:transform .4s cubic-bezier(.34,1.56,.5,1), box-shadow .4s ease, border-color .4s ease; will-change:transform;}
+    .ib-bento-card:hover{transform:scale(1.03) translateY(-7px); box-shadow:0 38px 80px -28px rgba(46,55,255,.58); border-color:rgba(110,116,255,.55); z-index:2;}
+    .ib-step{transition:transform .4s cubic-bezier(.34,1.56,.5,1), background .3s ease; border-radius:16px;}
+    .ib-step:hover{transform:translateX(14px) scale(1.015); background:rgba(110,116,255,.06);}
+    @media(max-width:760px){.imp-foot-cols{grid-template-columns:repeat(2,1fr) !important;}}
+    [data-motion="off"] *{animation-play-state:paused !important;}
+    @media(max-width:980px){.imp-hero-grid{flex-direction:column !important;}.imp-bento{grid-template-columns:1fr 1fr !important;}}
+    @media(max-width:620px){.imp-bento{grid-template-columns:1fr !important;}.imp-nav-links{display:none !important;}}
+    .imp-navlink{font-size:14.5px; font-weight:500; color:#C4C8D8; text-decoration:none; padding:8px 12px; border-radius:9px; transition:color .2s ease, background .2s ease;}
+    .imp-navlink:hover{color:#FDFCFE; background:rgba(255,255,255,.06);}
+    a.imp-cta{text-decoration:none; display:inline-flex; align-items:center; justify-content:center;}
+    a.imp-flink{text-decoration:none;}
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible{outline:2px solid #6E74FF; outline-offset:3px; border-radius:6px;}
+    html{scroll-behavior:smooth;}
+    @media (prefers-reduced-motion: reduce){ [data-motion] *{animation-play-state:paused !important;} html{scroll-behavior:auto !important;} }
+  </style>
+</helmet>
+<div data-motion="{{ motionAttr }}" style="font-family:Satoshi, 'Segoe UI', system-ui, -apple-system, sans-serif; background:#070712; color:#FDFCFE; position:relative;">
+
+  <!-- ===== NAVBAR (se despliega tras el 2º módulo) ===== -->
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:120; transform:{{ navTransform }}; opacity:{{ navOpacity }}; pointer-events:{{ navPE }}; transition:transform .5s cubic-bezier(.22,1,.36,1), opacity .4s ease;">
+    <div style="max-width:1180px; margin:0 auto; padding:14px 18px 0;">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:11px 12px 11px 22px; border-radius:16px; background:rgba(10,11,22,.74); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.1); box-shadow:0 18px 50px -24px rgba(0,0,0,.85);">
+        <a href="#top" style="font-size:19px; font-weight:800; letter-spacing:-.02em; color:#FDFCFE; text-decoration:none; white-space:nowrap;">Reac Studio<span style="color:#FA3601;">.</span></a>
+        <div class="imp-nav-links" style="display:flex; align-items:center; gap:2px;">
+          <a class="imp-navlink" href="#servicios">Servicios</a>
+          <a class="imp-navlink" href="#proceso">Proceso</a>
+          <a class="imp-navlink" href="#testimonios">Testimonios</a>
+          <a class="imp-navlink" href="#faq">FAQ</a>
+        </div>
+        <a class="imp-cta" href="#contacto" style="padding:11px 20px; border-radius:11px; background:linear-gradient(135deg,#FA3601,#F0430A); color:#FDFCFE; font-weight:600; font-size:14.5px; box-shadow:0 10px 24px -10px rgba(250,54,1,.6); white-space:nowrap;">Diagnóstico gratis</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CONTENIDO (capa opaca que revela el footer al final) ===== -->
+  <div style="position:relative; z-index:1; background:#070712;">
+
+  <!-- ===== PARALLAX HERO (Osmo · repo paralaxx-reacs) ===== -->
+  <section id="top" data-screen-label="Parallax" style="position:relative; display:flex; height:100vh; min-height:600px; overflow:hidden; background:radial-gradient(ellipse 75% 55% at 50% 8%, rgba(46,55,255,.38) 0%, rgba(23,16,165,.12) 40%, transparent 62%), radial-gradient(ellipse 95% 60% at 50% 100%, rgba(250,54,1,.32) 0%, rgba(240,67,10,.1) 40%, transparent 62%), radial-gradient(ellipse 60% 32% at 50% 46%, rgba(124,58,237,.3) 0%, transparent 65%), #070712;">
+    <div style="position:absolute; inset:0; overflow:hidden;">
+      <div style="position:absolute; inset:0; width:100%; height:100%;">
+        <img ref="{{ p1Ref }}" src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795be09b462b2e8ebf71_osmo-parallax-layer-3.webp" alt="" loading="eager" style="position:absolute; bottom:0; left:50%; transform:translate(-50%,0); width:100%; max-width:1700px; height:auto; pointer-events:none; user-select:none; opacity:.8; filter:grayscale(1) brightness(.85) sepia(1) hue-rotate(195deg) saturate(2.4) contrast(.98); will-change:transform;">
+        <img ref="{{ p2Ref }}" src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795b4d5ac529e7d3a562_osmo-parallax-layer-2.webp" alt="" loading="eager" style="position:absolute; bottom:0; left:50%; transform:translate(-50%,0); width:100%; max-width:1700px; height:auto; pointer-events:none; user-select:none; filter:grayscale(1) brightness(.62) sepia(1) hue-rotate(190deg) saturate(3.2) contrast(1.05); will-change:transform;">
+        <div ref="{{ pTitleRef }}" style="position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); width:100%; text-align:center; z-index:3; will-change:transform;">
+          <h2 style="margin:0; font-family:'Pinyon Script', cursive; font-weight:400; line-height:.9; letter-spacing:.01em; font-size:clamp(3.5rem,13vw,12rem); color:#FDFCFE; text-shadow:0 2px 30px rgba(5,5,9,.6), 0 0 70px rgba(46,55,255,.4), 0 0 120px rgba(124,58,237,.25);">Reac Studio</h2>
+        </div>
+        <img ref="{{ p4Ref }}" src="https://cdn.prod.website-files.com/671752cd4027f01b1b8f1c7f/6717795bb5aceca85011ad83_osmo-parallax-layer-1.webp" alt="" loading="eager" style="position:absolute; bottom:0; left:50%; transform:translate(-50%,0); width:100%; max-width:1700px; height:auto; pointer-events:none; user-select:none; filter:grayscale(1) brightness(.62) sepia(1) hue-rotate(190deg) saturate(3.2) contrast(1.05); will-change:transform;">
+      </div>
+      <div style="position:absolute; inset:0; z-index:5; pointer-events:none; background:linear-gradient(to bottom, transparent 55%, rgba(7,7,18,.6) 80%, #070712 100%);"></div>
+      <div style="position:absolute; bottom:0; left:0; width:100%; height:2px; background:#070712; z-index:6;"></div>
+    </div>
+    <div style="position:absolute; left:50%; bottom:34px; transform:translateX(-50%); z-index:7; display:flex; flex-direction:column; align-items:center; gap:9px;">
+      <span style="font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#868CA6; font-weight:600;">Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px; color:#6E74FF; animation:floatBounce 1.8s ease-in-out infinite;"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+  </section>
+
+  <!-- ===== HERO (dark) ===== -->
+  <section data-screen-label="Hero" style="position:relative; min-height:100vh; padding:30px 6vw 70px; overflow:hidden; display:flex; flex-direction:column;">
+    <div style="position:absolute; inset:0; z-index:0; overflow:hidden;">
+      <div style="position:absolute; inset:-25% -12%; transform:rotate(-19deg); animation:bgDrift 18s ease-in-out infinite;">
+        <div style="position:absolute; top:14%; left:0; width:62%; height:1.5px; background:rgba(255,255,255,.04);"><div style="position:absolute; top:-1px; height:3px; width:130px; left:-18%; border-radius:3px; background:linear-gradient(90deg,transparent,#1F27EB,#7C3AED,transparent); box-shadow:0 0 18px #4f6ef7; animation:beamMove 7.5s linear infinite;"></div></div>
+        <div style="position:absolute; top:30%; left:6%; width:54%; height:1.5px; background:rgba(255,255,255,.04);"><div style="position:absolute; top:-1px; height:3px; width:90px; left:-18%; border-radius:3px; background:linear-gradient(90deg,transparent,#7C3AED,#1F27EB,transparent); box-shadow:0 0 16px #7c5cf0; animation:beamMove 9s linear infinite 1.2s;"></div></div>
+        <div style="position:absolute; top:48%; left:0; width:70%; height:1.5px; background:rgba(255,255,255,.04);"><div style="position:absolute; top:-1px; height:3px; width:160px; left:-18%; border-radius:3px; background:linear-gradient(90deg,transparent,#FA3601,#FF7A4D,transparent); box-shadow:0 0 20px #FA3601; animation:beamMove 6.4s linear infinite .6s;"></div></div>
+        <div style="position:absolute; top:66%; left:10%; width:50%; height:1.5px; background:rgba(255,255,255,.04);"><div style="position:absolute; top:-1px; height:3px; width:110px; left:-18%; border-radius:3px; background:linear-gradient(90deg,transparent,#1F27EB,#7C3AED,transparent); box-shadow:0 0 16px #4f6ef7; animation:beamMove 10s linear infinite 2.1s;"></div></div>
+        <div style="position:absolute; top:84%; left:0; width:64%; height:1.5px; background:rgba(255,255,255,.04);"><div style="position:absolute; top:-1px; height:3px; width:120px; left:-18%; border-radius:3px; background:linear-gradient(90deg,transparent,#6E74FF,#2E37FF,transparent); box-shadow:0 0 18px #7c5cf0; animation:beamMove 8s linear infinite 1.7s;"></div></div>
+      </div>
+      <div style="position:absolute; top:34%; left:58%; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(46,55,255,.30), transparent 62%); filter:blur(20px); animation:softPulse 9s ease-in-out infinite;"></div>
+      <div style="position:absolute; top:6%; left:-6%; width:380px; height:380px; border-radius:50%; background:radial-gradient(circle, rgba(31,39,235,.20), transparent 60%); filter:blur(18px); animation:softPulse 11s ease-in-out infinite 1s;"></div>
+      <div style="position:absolute; bottom:0%; left:6%; width:440px; height:440px; border-radius:50%; background:radial-gradient(circle, rgba(250,54,1,.18), transparent 62%); filter:blur(26px); animation:softPulse 12s ease-in-out infinite 1.4s;"></div>
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(7,7,18,0) 60%, #070712 100%);"></div>
+    </div>
+
+    <!-- hero grid -->
+    <div class="imp-hero-grid" style="position:relative; z-index:2; display:flex; align-items:center; gap:64px; max-width:1280px; margin:auto; width:100%; flex:1;">
+      <div style="flex:1 1 560px;">
+        
+        <h1 class="hero-t1" style="font-size:clamp(38px,5.2vw,70px); line-height:1.02; font-weight:700; letter-spacing:-.035em; margin:0 0 24px; max-width:720px;">{{ titleNodes }}</h1>
+        <p class="hero-anim hero-sub" style="font-size:clamp(16px,1.4vw,19px); line-height:1.6; color:#868CA6; max-width:540px; margin:0 0 38px; font-weight:400;">Logramos que más gente te encuentre, te consulte y te compre — mientras vos te enfocás en lo que sabés hacer.</p>
+        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+          <a class="imp-cta hero-anim hero-btn1" href="#contacto" style="padding:15px 30px; border-radius:13px; background:linear-gradient(135deg,#FA3601,#F0430A); color:#FDFCFE; font-weight:600; font-size:15.5px; box-shadow:0 12px 30px -8px rgba(250,54,1,.55);">Comenzar ahora</a>
+          <a class="imp-cta hero-anim hero-btn2" href="#servicios" style="padding:15px 28px; border-radius:13px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.18); color:#FDFCFE; font-weight:600; font-size:15.5px;">Ver servicios</a>
+        </div>
+      </div>
+
+      <!-- glass metric card -->
+      <sc-if value="{{ showMetric }}" hint-placeholder-val="{{ true }}">
+      <div class="hero-anim hero-card" style="flex:0 0 350px; align-self:center;">
+        <div class="ib-dash-wrap">
+        <div class="ib-dash-win" style="position:relative; width:350px; border-radius:26px; padding:28px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); box-shadow:0 30px 70px -20px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.18); animation:floatY 7s ease-in-out infinite;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <span style="font-size:13.5px; color:#C4C8D8; font-weight:500;">Leads generados</span>
+            <span style="display:inline-flex; align-items:center; gap:5px; padding:5px 10px; border-radius:999px; background:rgba(250,54,1,.16); border:1px solid rgba(250,54,1,.32); color:#FF7A4D; font-size:12.5px; font-weight:700;"><span style="font-size:10px;">▲</span>{{ leadsText }}</span>
+          </div>
+          <div style="font-size:42px; font-weight:700; letter-spacing:-.03em; margin-bottom:4px; font-variant-numeric:tabular-nums;">2.847</div>
+          <div style="font-size:13px; color:#868CA6; margin-bottom:20px;">en los últimos 90 días</div>
+          <svg viewBox="0 0 300 80" style="width:100%; height:80px; display:block; overflow:visible;">
+            <defs>
+              <linearGradient id="impSpark" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F27EB"></stop><stop offset="1" stop-color="#6E74FF"></stop></linearGradient>
+              <linearGradient id="impSparkFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(46,55,255,.34)"></stop><stop offset="1" stop-color="rgba(46,55,255,0)"></stop></linearGradient>
+            </defs>
+            <path d="M0,62 L40,56 L80,58 L120,40 L160,46 L200,24 L240,30 L300,6 L300,80 L0,80 Z" fill="url(#impSparkFill)"></path>
+            <path d="M0,62 L40,56 L80,58 L120,40 L160,46 L200,24 L240,30 L300,6" fill="none" stroke="url(#impSpark)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:100; animation:drawLine 1.8s ease-out .3s forwards;"></path>
+            <circle cx="300" cy="6" r="4" fill="#6E74FF" style="filter:drop-shadow(0 0 6px #6E74FF);"></circle>
+          </svg>
+          <div style="display:flex; justify-content:space-between; margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.1);">
+            <div><div style="font-size:20px; font-weight:700;">4.2x</div><div style="font-size:11.5px; color:#868CA6;">ROAS</div></div>
+            <div><div style="font-size:20px; font-weight:700;">-38%</div><div style="font-size:11.5px; color:#868CA6;">CPL</div></div>
+            <div><div style="font-size:20px; font-weight:700;">24/7</div><div style="font-size:11.5px; color:#868CA6;">IA activa</div></div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ===== ESTADÍSTICAS (velocímetro + odómetro) ===== -->
+  <section ref="{{ statsRef }}" data-screen-label="Estadisticas" style="position:relative; overflow:hidden; background:linear-gradient(135deg,#1F27EB 0%, #2A037F 60%, #1710A5 100%); color:#FDFCFE; padding:130px 6vw;">
+    <div style="position:absolute; top:-10%; left:-5%; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle,rgba(46,55,255,.35),transparent 60%); filter:blur(30px); animation:softPulse 10s ease-in-out infinite;"></div>
+    <div style="position:absolute; bottom:-10%; right:-5%; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle,rgba(124,58,237,.35),transparent 60%); filter:blur(30px); animation:softPulse 12s ease-in-out infinite 1s;"></div>
+    <div style="position:relative; z-index:2; max-width:1280px; margin:0 auto;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:56px;">
+        <div class="reveal rv-left" style="max-width:640px;">
+          <div style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.72); margin-bottom:18px;">En números</div>
+          <h2 style="font-size:clamp(30px,3.6vw,48px); line-height:1.08; font-weight:700; letter-spacing:-.03em; margin:0;">Resultados que hablan por sí solos.</h2>
+        </div>
+        <div class="ib-stat-card reveal rv-right" style="flex:0 0 auto; min-width:240px; background:#0E1020; border:1px solid #262B47; border-radius:24px; padding:28px 34px; box-shadow:0 20px 50px -28px rgba(0,0,0,.55);">
+          <div class="ib-stat-num" style="font-size:48px; font-weight:700; letter-spacing:-.03em; line-height:1; font-variant-numeric:tabular-nums;">+10</div>
+          <div style="font-size:14px; color:#868CA6; font-weight:500; margin-top:10px;">Proyectos entregados</div>
+        </div>
+      </div>
+      <div class="ib-stats reveal" style="display:flex; gap:24px; align-items:stretch; flex-wrap:wrap;">
+        <!-- velocímetro -->
+        <div class="ib-gauge-card" style="flex:1 1 360px; background:#0E1020; border:1px solid #262B47; border-radius:24px; padding:40px; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 20px 50px -28px rgba(0,0,0,.55);">
+          <div style="position:relative; width:300px; max-width:100%;">
+            <svg viewBox="0 0 240 138" style="width:100%; display:block; overflow:visible;">
+              <defs><linearGradient id="ibGauge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F27EB"></stop><stop offset="1" stop-color="#7C3AED"></stop></linearGradient></defs>
+              <path d="M22,122 A98,98 0 0 1 218,122" fill="none" stroke="#262B47" stroke-width="20" stroke-linecap="round" pathLength="100"></path>
+              <path d="M22,122 A98,98 0 0 1 218,122" fill="none" stroke="url(#ibGauge)" stroke-width="20" stroke-linecap="round" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:{{ gaugeOffset }}; transition:stroke-dashoffset 1.9s cubic-bezier(.22,1,.36,1);"></path>
+            </svg>
+            <div style="position:absolute; left:0; right:0; bottom:6px; text-align:center;">
+              <div class="ib-gauge-num" style="font-size:54px; font-weight:700; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1; background:linear-gradient(135deg,#1F27EB,#7C3AED); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ pctText }}</div>
+              <div style="font-size: 14px; color: #ffffff; font-weight: 500; margin-top: 8px">Entregas web a tiempo</div>
+            </div>
+          </div>
+        </div>
+        <!-- odómetro counters -->
+        <div style="flex:1 1 360px; display:flex; flex-direction:column; gap:20px;">
+          <div class="ib-stat-card" style="flex:1; background:#0E1020; border:1px solid #262B47; border-radius:24px; padding:34px 38px; display:flex; flex-direction:column; justify-content:center;">
+            <div class="ib-stat-num" style="font-size:54px; font-weight:700; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1;">{{ salesText }}</div>
+            <div style="font-size:15px; color:#868CA6; font-weight:500; margin-top:10px;">En ventas generadas con campañas</div>
+          </div>
+          <div style="display:flex; gap:20px; flex-wrap:wrap;">
+            <div class="ib-stat-card" style="flex:1 1 140px; background:#0E1020; border:1px solid #262B47; border-radius:24px; padding:30px; display:flex; flex-direction:column; justify-content:center;">
+              <div class="ib-stat-num" style="font-size:38px; font-weight:700; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1;">{{ leadsCountText }}</div>
+              <div style="font-size:14px; color:#868CA6; font-weight:500; margin-top:8px;">Leads calificados por mes</div>
+            </div>
+            <div class="ib-stat-card" style="flex:1 1 140px; background:linear-gradient(135deg,#1F27EB,#7C3AED); color:#FDFCFE; border-radius:24px; padding:30px; display:flex; flex-direction:column; justify-content:center; box-shadow:0 18px 40px -18px rgba(46,55,255,.6);">
+              <div class="ib-stat-num" style="font-size:38px; font-weight:700; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1;">4.2x</div>
+              <div style="font-size:14px; color:rgba(255,255,255,.86); font-weight:500; margin-top:8px;">Más ágil con automatización</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLANES Y SERVICIOS (bento) ===== -->
+  <section id="servicios" data-screen-label="Servicios" style="background:#070712; color:#FDFCFE; padding:120px 6vw;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto 60px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; background:linear-gradient(120deg,#2E37FF,#6E74FF); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:18px;">Servicios y planes</div>
+        <h2 style="font-size:clamp(32px,4vw,52px); line-height:1.06; font-weight:700; letter-spacing:-.03em; margin:0 0 18px;">Elegí por dónde empezar</h2>
+        <p style="font-size:17px; color:#868CA6; margin:0; line-height:1.55;">Elegí un módulo específico o armemos un sistema completo para atraer clientes, vender mejor y ordenar tus procesos digitales.</p>
+      </div>
+
+      <div class="imp-bento reveal" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; align-items:stretch;">
+        <!-- 1 Marketing -->
+        <div class="imp-card imp-led" style="--ld:0s;">
+          <div class="imp-led-inner" style="padding:30px; background:#0E1020; display:flex; flex-direction:column;">
+          <div style="font-size:19px; font-weight:700; letter-spacing:-.01em;">Marketing Digital</div>
+          <div style="font-size:14px; color:#868CA6; margin:8px 0 20px; line-height:1.5;">Para negocios que necesitan más consultas.</div>
+          <div style="font-size:13px; color:#868CA6;">Desde</div>
+          <div style="font-size:30px; font-weight:700; letter-spacing:-.02em; margin-bottom:22px;">US$150</div>
+          <div style="display:flex; flex-direction:column; gap:11px; flex:1; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Más consultas reales por WhatsApp</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Campañas en Meta y Google Ads</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Estrategia de oferta y público</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Auditoría y optimización continua</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Seguimiento y métricas claras</div>
+          </div>
+          <a class="imp-cta" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Quiero más consultas →</a>
+          </div>
+        </div>
+        <!-- 2 Web -->
+        <div class="imp-card imp-led" style="--ld:-1.1s;">
+          <div class="imp-led-inner" style="padding:30px; background:#0E1020; display:flex; flex-direction:column;">
+          <div style="font-size:19px; font-weight:700; letter-spacing:-.01em;">Desarrollo Web</div>
+          <div style="font-size:14px; color:#868CA6; margin:8px 0 20px; line-height:1.5;">Para marcas que necesitan presencia profesional.</div>
+          <div style="font-size:13px; color:#868CA6;">Desde</div>
+          <div style="font-size:30px; font-weight:700; letter-spacing:-.02em; margin-bottom:22px;">US$200</div>
+          <div style="display:flex; flex-direction:column; gap:11px; flex:1; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Landing pages comerciales</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Sitios institucionales</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Tiendas online</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Diseño responsivo</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>SEO inicial y analíticas</div>
+          </div>
+          <a class="imp-cta" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Crear mi web →</a>
+          </div>
+        </div>
+        <!-- 3 Automatizaciones -->
+        <div class="imp-card imp-led" style="--ld:-2.2s;">
+          <div class="imp-led-inner" style="padding:30px; background:#0E1020; display:flex; flex-direction:column;">
+          <div style="font-size:19px; font-weight:700; letter-spacing:-.01em;">Automatizaciones IA</div>
+          <div style="font-size:14px; color:#868CA6; margin:8px 0 20px; line-height:1.5;">Para negocios que pierden tiempo en tareas manuales.</div>
+          <div style="font-size:13px; color:#868CA6;">Desde</div>
+          <div style="font-size:30px; font-weight:700; letter-spacing:-.02em; margin-bottom:22px;">US$250 <span style="font-size:14px; color:#868CA6; font-weight:500;">/ proyecto</span></div>
+          <div style="display:flex; flex-direction:column; gap:11px; flex:1; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Automatización entre apps</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Chatbots y asistentes IA</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Gestión de leads</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>CRM y seguimiento</div>
+            <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Dashboards operativos</div>
+          </div>
+          <a class="imp-cta" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Automatizar procesos →</a>
+          </div>
+        </div>
+        <!-- 4 Integral DESTACADA -->
+        <div class="imp-card imp-led imp-led-hot" style="--ld:-3.3s;">
+          <div class="imp-led-inner" style="padding:30px; background:radial-gradient(120% 80% at 50% 0%, rgba(46,55,255,.28), rgba(13,13,22,.98) 65%); display:flex; flex-direction:column;">
+            <div style="display:inline-flex; align-self:flex-start; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:linear-gradient(135deg,#1F27EB,#7C3AED); font-size:12px; font-weight:700; margin-bottom:16px; box-shadow:0 6px 18px -6px rgba(46,55,255,.7);">⭐ Recomendado</div>
+            <div style="font-size:19px; font-weight:700; letter-spacing:-.01em;">Solución Integral</div>
+            <div style="font-size:14px; color:#C4C8D8; margin:8px 0 20px; line-height:1.5;">La opción que más eligen los que quieren resultados sin complicarse.</div>
+            <div style="font-size:13px; color:#C4C8D8;">A medida · desde</div>
+            <div style="font-size:30px; font-weight:700; letter-spacing:-.02em; margin-bottom:22px;">US$450</div>
+            <div style="display:flex; flex-direction:column; gap:11px; flex:1; margin-bottom:24px;">
+              <div style="display:flex; gap:10px; font-size:14px; color:#FDFCFE;"><span style="color:#6E74FF; flex:none;">✓</span>Estrategia + implementación</div>
+              <div style="display:flex; gap:10px; font-size:14px; color:#FDFCFE;"><span style="color:#6E74FF; flex:none;">✓</span>Web, campañas y procesos conectados</div>
+              <div style="display:flex; gap:10px; font-size:14px; color:#FDFCFE;"><span style="color:#6E74FF; flex:none;">✓</span>Captación y seguimiento</div>
+              <div style="display:flex; gap:10px; font-size:14px; color:#FDFCFE;"><span style="color:#6E74FF; flex:none;">✓</span>Medición centralizada</div>
+              <div style="display:flex; gap:10px; font-size:14px; color:#FDFCFE;"><span style="color:#6E74FF; flex:none;">✓</span>Escalabilidad y acompañamiento</div>
+            </div>
+            <a class="imp-cta" href="#contacto" style="padding:14px; border-radius:12px; background:linear-gradient(135deg,#FA3601,#F0430A); text-align:center; font-weight:700; font-size:14.5px; color:#FDFCFE; box-shadow:0 12px 28px -8px rgba(250,54,1,.6); width:100%;">Armar sistema completo →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENTO (microinteracciones, dark) ===== -->
+  <section data-screen-label="Bento" style="background:#070712; color:#FDFCFE; padding:130px 6vw;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div class="reveal" style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; background:linear-gradient(120deg,#2E37FF,#6E74FF); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:18px;">Nos adaptamos a lo que necesites</div>
+      <h2 class="reveal" data-rv-delay="90" style="font-size:clamp(30px,3.6vw,48px); line-height:1.08; font-weight:700; letter-spacing:-.03em; margin:0 0 16px; max-width:680px;">Contamos con un plan 100% personalizado.</h2>
+      <p class="reveal" data-rv-delay="170" style="font-size:17px; color:#868CA6; max-width:540px; margin:0 0 52px;">Campañas, web y automatizaciones funcionando en piloto automático mientras vos te enfocás en tu negocio.</p>
+      <div class="ib-bento reveal" style="display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:182px; gap:18px;">
+        <!-- A: toggles -->
+        <div class="ib-bento-a ib-bento-card" style="grid-column:span 2; grid-row:span 2; border-radius:26px; padding:30px 34px; background:linear-gradient(160deg, rgba(31,39,235,.12), rgba(124,58,237,.06)); border:1px solid rgba(255,255,255,.1); display:flex; flex-direction:column; justify-content:center; gap:24px; overflow:hidden;">
+          <div>
+            <div style="font-size:13px; color:#868CA6; font-weight:600; letter-spacing:.04em; text-transform:uppercase;">Automatización</div>
+            <h3 style="font-size:24px; font-weight:700; letter-spacing:-.02em; margin:12px 0 0;">Reglas que trabajan por vos.</h3>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div onClick="{{ toggleWsp }}" style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-radius:14px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); cursor:pointer; user-select:none;">
+              <span style="font-size:15px; font-weight:500;">Respuesta automática en WhatsApp</span>
+              <span style="width:46px; height:26px; border-radius:999px; position:relative; flex:none; background:{{ wspTrack }}; transition:background .3s ease;"><span style="position:absolute; top:3px; left:{{ wspKnob }}; width:20px; height:20px; border-radius:50%; background:#FDFCFE; box-shadow:0 2px 6px rgba(0,0,0,.4); transition:left .3s cubic-bezier(.34,1.56,.5,1);"></span></span>
+            </div>
+            <div onClick="{{ toggleLeads }}" style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-radius:14px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); cursor:pointer; user-select:none;">
+              <span style="font-size:15px; font-weight:500;">Seguimiento de leads</span>
+              <span style="width:46px; height:26px; border-radius:999px; position:relative; flex:none; background:{{ leadsTrack }}; transition:background .3s ease;"><span style="position:absolute; top:3px; left:{{ leadsKnob }}; width:20px; height:20px; border-radius:50%; background:#FDFCFE; box-shadow:0 2px 6px rgba(0,0,0,.4); transition:left .3s cubic-bezier(.34,1.56,.5,1);"></span></span>
+            </div>
+            <div onClick="{{ toggleCrm }}" style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-radius:14px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); cursor:pointer; user-select:none;">
+              <span style="font-size:15px; font-weight:500;">Sincronización con el CRM</span>
+              <span style="width:46px; height:26px; border-radius:999px; position:relative; flex:none; background:{{ crmTrack }}; transition:background .3s ease;"><span style="position:absolute; top:3px; left:{{ crmKnob }}; width:20px; height:20px; border-radius:50%; background:#FDFCFE; box-shadow:0 2px 6px rgba(0,0,0,.4); transition:left .3s cubic-bezier(.34,1.56,.5,1);"></span></span>
+            </div>
+            <div onClick="{{ toggleReport }}" style="display:flex; align-items:center; justify-content:space-between; padding:13px 18px; border-radius:14px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); cursor:pointer; user-select:none;">
+              <span style="font-size:15px; font-weight:500;">Reporte semanal por email</span>
+              <span style="width:46px; height:26px; border-radius:999px; position:relative; flex:none; background:{{ reportTrack }}; transition:background .3s ease;"><span style="position:absolute; top:3px; left:{{ reportKnob }}; width:20px; height:20px; border-radius:50%; background:#FDFCFE; box-shadow:0 2px 6px rgba(0,0,0,.4); transition:left .3s cubic-bezier(.34,1.56,.5,1);"></span></span>
+            </div>
+          </div>
+        </div>
+        <!-- B: progress -->
+        <div class="ib-bento-card" style="grid-column:span 2; border-radius:26px; padding:30px 34px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); display:flex; flex-direction:column; justify-content:center; gap:22px;">
+          <div style="font-size:18px; font-weight:700; letter-spacing:-.01em;">Objetivos del mes</div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:13px; color:#868CA6; margin-bottom:8px;"><span>Campañas activas</span><span ref="{{ campNumRef }}" style="color:#C4C8D8; font-weight:700; font-variant-numeric:tabular-nums; display:inline-block; transform-origin:right center;"><span style="color:#FDFCFE;">{{ campVal }}</span><span style="color:#5C6178;"> / {{ campMax }}</span></span></div>
+            <div onPointerDown="{{ dragCamp }}" style="position:relative; height:9px; border-radius:999px; background:rgba(255,255,255,.08); cursor:ew-resize; touch-action:none;"><div style="height:100%; border-radius:999px; background:linear-gradient(90deg,#1F27EB,#7C3AED); width:{{ campW }}; transition:width .1s ease-out;"></div><span style="position:absolute; top:50%; left:{{ campW }}; width:16px; height:16px; border-radius:50%; background:#FDFCFE; transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(0,0,0,.5); transition:left .1s ease-out;"></span></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:13px; color:#868CA6; margin-bottom:8px;"><span>Leads contactados</span><span ref="{{ leadsNumRef }}" style="color:#C4C8D8; font-weight:700; font-variant-numeric:tabular-nums; display:inline-block; transform-origin:right center;"><span style="color:#FDFCFE;">{{ leadsGVal }}</span><span style="color:#5C6178;"> / {{ leadsGMax }}</span></span></div>
+            <div onPointerDown="{{ dragLeadsG }}" style="position:relative; height:9px; border-radius:999px; background:rgba(255,255,255,.08); cursor:ew-resize; touch-action:none;"><div style="height:100%; border-radius:999px; background:linear-gradient(90deg,#2E37FF,#1F27EB); width:{{ leadsGW }}; transition:width .1s ease-out;"></div><span style="position:absolute; top:50%; left:{{ leadsGW }}; width:16px; height:16px; border-radius:50%; background:#FDFCFE; transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(0,0,0,.5); transition:left .1s ease-out;"></span></div>
+          </div>
+        </div>
+        <!-- C: slider -->
+        <div class="ib-bento-card" style="border-radius:26px; padding:28px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); display:flex; flex-direction:column; justify-content:space-between;">
+          <div style="font-size:14px; font-weight:600; color:#C4C8D8;">Inversión</div>
+          <div>
+            <div style="font-size:30px; font-weight:700; letter-spacing:-.02em; margin-bottom:4px; font-variant-numeric:tabular-nums;">{{ budgetText }}</div>
+            <div style="font-size:12.5px; color:#868CA6; margin-bottom:18px;">Presupuesto mensual</div>
+            <div onPointerDown="{{ dragBudget }}" style="position:relative; height:6px; border-radius:999px; background:rgba(255,255,255,.1); cursor:ew-resize; touch-action:none;">
+              <div style="position:absolute; top:0; left:0; height:6px; width:{{ budgetW }}; border-radius:999px; background:linear-gradient(90deg,#1F27EB,#7C3AED); transition:width .1s ease-out;"></div>
+              <span style="position:absolute; top:50%; left:{{ budgetW }}; width:18px; height:18px; border-radius:50%; background:#FDFCFE; transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(0,0,0,.5); transition:left .1s ease-out;"></span>
+            </div>
+          </div>
+        </div>
+        <!-- D: stat mini -->
+        <div class="ib-bento-card" style="border-radius:26px; padding:28px; background:linear-gradient(150deg,#1F27EB,#7C3AED); display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 18px 40px -20px rgba(46,55,255,.6);">
+          <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,.85);">Tiempo de respuesta</div>
+          <div><div style="font-size:34px; font-weight:700; letter-spacing:-.02em; color:#FDFCFE;">2.4s</div><div style="font-size:13px; color:rgba(255,255,255,.8); margin-top:4px;">a cada consulta</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DASHBOARD SHOWCASE (gradient) ===== -->
+  <section id="proceso" ref="{{ dashRef }}" data-screen-label="Dashboard" style="position:relative; padding:140px 6vw 160px; overflow:hidden; background:linear-gradient(135deg,#1F27EB 0%, #2A037F 60%, #1710A5 100%);">
+    <div style="position:absolute; top:-10%; left:-5%; width:480px; height:480px; border-radius:50%; background:radial-gradient(circle,rgba(46,55,255,.35),transparent 60%); filter:blur(30px); animation:softPulse 10s ease-in-out infinite;"></div>
+    <div style="position:absolute; bottom:-10%; right:-5%; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle,rgba(124,58,237,.35),transparent 60%); filter:blur(30px); animation:softPulse 12s ease-in-out infinite 1s;"></div>
+    <div class="reveal" style="position:relative; z-index:2; text-align:center; max-width:720px; margin:0 auto 64px;">
+      <h2 style="font-size:clamp(30px,4vw,52px); line-height:1.08; font-weight:700; letter-spacing:-.03em; margin:0 0 18px; color:#FDFCFE;">Tus resultados, todo desde un mismo lugar.</h2>
+      <p style="font-size:clamp(16px,1.5vw,19px); line-height:1.55; font-weight:400; color:rgba(255,255,255,.78); margin:0; max-width:560px; margin-left:auto; margin-right:auto;">Combinamos marketing, desarrollo web y automatización para potenciar tu trabajo desde una sola pantalla.</p>
+    </div>
+    <!-- floating window -->
+    <div class="ib-dash-wrap reveal rv-scale" style="position:relative; z-index:2; max-width:900px; margin:0 auto;">
+    <div class="ib-dash-win" style="position:relative; border-radius:22px; background:#0E1020; border:1px solid rgba(255,255,255,.12); box-shadow:0 50px 110px -30px rgba(0,0,0,.7); overflow:hidden; animation:floatY 8s ease-in-out infinite;">
+      <div style="display:flex; align-items:center; gap:8px; padding:16px 20px; border-bottom:1px solid rgba(255,255,255,.08);">
+        <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
+        <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
+        <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
+        <span style="margin-left:14px; font-size:13px; color:#868CA6; font-weight:500;">Reac Studio · Panel de campañas</span>
+      </div>
+      <div style="padding:32px 36px 40px; display:flex; gap:34px; flex-wrap:wrap;">
+        <div style="flex:0 0 200px;">
+          <div style="font-size:13px; color:#868CA6; margin-bottom:6px;">Leads del mes</div>
+          <div style="font-size:36px; font-weight:700; letter-spacing:-.03em; color:#FDFCFE; margin-bottom:4px;">1.847</div>
+          <div style="display:inline-flex; align-items:center; gap:5px; font-size:13px; color:#FF7A4D; font-weight:600;">▲ +18.4% vs. mes anterior</div>
+          <div style="margin-top:28px; display:flex; flex-direction:column; gap:14px;">
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:10px;height:10px;border-radius:3px;background:#1F27EB;"></span><span style="font-size:13px;color:#C4C8D8;">Consultas</span></div>
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:10px;height:10px;border-radius:3px;background:#7C3AED;"></span><span style="font-size:13px;color:#C4C8D8;">Ventas</span></div>
+          </div>
+        </div>
+        <div style="flex:1 1 380px; min-width:300px;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; height:240px; padding-top:30px;">
+            <sc-for list="{{ bars }}" as="bar" hint-placeholder-count="8">
+              <div onMouseEnter="{{ bar.onEnter }}" onMouseLeave="{{ bar.onLeave }}" style="flex:1; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; position:relative; cursor:pointer;">
+                <div style="position:absolute; top:-2px; left:50%; transform:translateX(-50%); padding:6px 10px; border-radius:8px; background:#FDFCFE; color:#0E1020; font-size:12px; font-weight:700; white-space:nowrap; box-shadow:0 6px 16px rgba(0,0,0,.3); opacity:{{ bar.tip }}; transition:opacity .25s ease; pointer-events:none; z-index:3;">{{ bar.v }}<span style="position:absolute; bottom:-4px; left:50%; transform:translateX(-50%) rotate(45deg); width:8px; height:8px; background:#FDFCFE;"></span></div>
+                <div style="width:100%; max-width:34px; height:{{ bar.h }}; border-radius:8px 8px 4px 4px; background:linear-gradient(180deg,#2E37FF,#7C3AED); transform-origin:bottom center; transform:{{ bar.tf }}; opacity:{{ bar.op }}; box-shadow:{{ bar.sh }}; transition:height 1.1s cubic-bezier(.22,1,.36,1) {{ bar.d }}, transform .25s ease, opacity .25s ease, box-shadow .25s ease;"></div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding:0 4px;"><span style="font-size:11px;color:#868CA6;">Lun</span><span style="font-size:11px;color:#868CA6;">Mar</span><span style="font-size:11px;color:#868CA6;">Mié</span><span style="font-size:11px;color:#868CA6;">Jue</span><span style="font-size:11px;color:#868CA6;">Vie</span><span style="font-size:11px;color:#868CA6;">Sáb</span><span style="font-size:11px;color:#868CA6;">Dom</span><span style="font-size:11px;color:#868CA6;">Hoy</span></div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Cómo trabajamos (dentro del panel) -->
+    <div style="position:relative; z-index:2; max-width:900px; margin:96px auto 0;">
+      <div class="reveal" style="text-align:center; margin-bottom:52px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.72); margin-bottom:16px;">Cómo trabajamos</div>
+        <h2 style="font-size:clamp(30px,3.6vw,46px); line-height:1.06; font-weight:700; letter-spacing:-.03em; margin:0; color:#FDFCFE;">Un proceso claro, sin humo.</h2>
+      </div>
+      <div ref="{{ methodRef }}" class="reveal" style="display:flex; flex-direction:column;">
+        <sc-for list="{{ steps }}" as="step" hint-placeholder-count="4">
+          <div class="ib-step" style="display:flex; gap:36px; padding:30px 0; border-top:1px solid rgba(255,255,255,.18); align-items:flex-start;">
+            <div style="flex:none; width:90px; font-size:clamp(40px,4.6vw,62px); font-weight:700; letter-spacing:-.04em; font-variant-numeric:tabular-nums; line-height:1; color:{{ step.numCol }}; text-shadow:{{ step.glow }}; transition:color .5s ease, text-shadow .5s ease;">{{ step.num }}</div>
+            <div style="flex:1; padding-top:4px;">
+              <div style="font-size:clamp(21px,2.2vw,28px); font-weight:700; letter-spacing:-.02em; margin-bottom:9px; color:{{ step.titleCol }}; transition:color .5s ease;">{{ step.title }}</div>
+              <div style="font-size:16px; line-height:1.6; max-width:600px; color:{{ step.bodyCol }}; transition:color .5s ease;">{{ step.body }}</div>
+            </div>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid rgba(255,255,255,.18);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ (light pastel) ===== -->
+  <section id="faq" data-screen-label="FAQ" style="background:linear-gradient(180deg,#0A0B16 0%, #070712 100%); color:#FDFCFE; padding:120px 6vw;">
+    <div style="max-width:860px; margin:0 auto;">
+      <div class="reveal" style="text-align:center; margin-bottom:56px;">
+        <h2 style="font-size:clamp(32px,4vw,50px); line-height:1.06; font-weight:700; letter-spacing:-.03em; margin:0 0 16px;">Preguntas frecuentes</h2>
+        <p style="font-size:17px; color:#868CA6; margin:0;">Respuestas claras sobre nuestra forma de trabajar, costos y tiempos.</p>
+      </div>
+      <div class="reveal" style="display:flex; flex-direction:column; gap:14px;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div class="imp-faq" onClick="{{ f.onToggle }}" style="background:#0E1020; backdrop-filter:blur(8px); border:1px solid #262B47; border-radius:18px; padding:24px 26px; cursor:pointer; transition:border-color .3s ease, box-shadow .3s ease, transform .4s cubic-bezier(.34,1.56,.5,1); box-shadow:{{ f.shadow }};">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:18px;">
+              <div style="font-size:17px; font-weight:600; letter-spacing:-.01em; color:#FDFCFE;">{{ f.q }}</div>
+              <span style="flex:none; width:30px; height:30px; border-radius:50%; background:linear-gradient(135deg,#1F27EB,#7C3AED); color:#FDFCFE; display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:500; transform:rotate({{ f.rot }}); transition:transform .35s cubic-bezier(.22,1,.36,1);">+</span>
+            </div>
+            <div style="display:grid; grid-template-rows:{{ f.rows }}; transition:grid-template-rows .4s cubic-bezier(.22,1,.36,1);">
+              <div style="overflow:hidden;">
+                <div style="font-size:15.5px; line-height:1.65; color:#868CA6; padding-top:16px;">{{ f.a }}</div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIOS (dark) ===== -->
+  <section id="testimonios" data-screen-label="Testimonios" style="position:relative; z-index:1; background:#070712; color:#FDFCFE; padding:120px 6vw; overflow:hidden;">
+    <div style="position:absolute; top:-8%; right:-4%; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle, rgba(46,55,255,.16), transparent 62%); filter:blur(30px); animation:softPulse 11s ease-in-out infinite;"></div>
+    <div style="position:absolute; bottom:-10%; left:-4%; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(250,54,1,.12), transparent 62%); filter:blur(30px); animation:softPulse 13s ease-in-out infinite 1.2s;"></div>
+    <div style="position:relative; z-index:2; max-width:1280px; margin:0 auto;">
+      <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto 56px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; background:linear-gradient(120deg,#2E37FF,#6E74FF); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:18px;">Testimonios</div>
+        <h2 style="font-size:clamp(32px,4vw,52px); line-height:1.06; font-weight:700; letter-spacing:-.03em; margin:0 0 18px;">Qué dicen sobre nosotros</h2>
+        <p style="font-size:17px; color:#868CA6; margin:0; line-height:1.55;">Negocios reales que ordenaron su sistema digital y empezaron a vender mejor.</p>
+      </div>
+      <div class="imp-marquee reveal" style="position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);">
+        <div class="imp-track" style="display:flex; gap:20px; width:max-content;">
+          <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="6">
+            <div class="imp-testi" style="flex:none; width:360px; border-radius:26px; padding:32px; background:#0E1020; border:1px solid #262B47; display:flex; flex-direction:column; box-shadow:0 20px 50px -30px rgba(0,0,0,.8);">
+              <div style="display:flex; gap:3px; margin-bottom:18px; color:#FF7A4D; font-size:15px;">★★★★★</div>
+              <p style="font-size:16px; line-height:1.6; color:#C4C8D8; margin:0 0 26px; flex:1;">{{ t.quote }}</p>
+              <div style="display:flex; align-items:center; gap:13px;">
+                <span style="width:46px; height:46px; border-radius:50%; background:{{ t.grad }}; flex:none; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; color:#FDFCFE;">{{ t.initials }}</span>
+                <div><div style="font-size:15px; font-weight:600;">{{ t.name }}</div><div style="font-size:13px; color:#868CA6;">{{ t.role }}</div></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA DE CIERRE / CONTACTO ===== -->
+  <section id="contacto" data-screen-label="Contacto" style="position:relative; background:#070712; color:#FDFCFE; padding:40px 6vw 130px; overflow:hidden;">
+    <div class="reveal rv-scale" style="position:relative; max-width:1080px; margin:0 auto; border-radius:30px; overflow:hidden; background:linear-gradient(135deg,#1F27EB 0%, #2A037F 60%, #1710A5 100%); box-shadow:0 40px 100px -40px rgba(46,55,255,.6);">
+      <div style="position:absolute; top:-20%; right:-6%; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(124,58,237,.45),transparent 60%); filter:blur(30px); animation:softPulse 10s ease-in-out infinite;"></div>
+      <div style="position:absolute; bottom:-25%; left:-6%; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(250,54,1,.3),transparent 62%); filter:blur(34px); animation:softPulse 12s ease-in-out infinite 1s;"></div>
+      <div style="position:relative; z-index:2; padding:clamp(40px,6vw,72px); text-align:center;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.72); margin-bottom:18px;">Hablemos</div>
+        <h2 style="font-size:clamp(32px,4.4vw,56px); line-height:1.05; font-weight:800; letter-spacing:-.03em; margin:0 auto 16px; max-width:760px;">Empecemos con un diagnóstico gratis.</h2>
+        <p style="font-size:17px; line-height:1.55; color:rgba(255,255,255,.82); max-width:560px; margin:0 auto 36px;">Sin compromiso y sin vueltas: revisamos tu presencia digital y te decimos por dónde conviene empezar.</p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <a class="imp-cta" href="https://wa.me/5491100000000?text=Hola%20Reac%20Studio,%20quiero%20un%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener" style="padding:16px 32px; border-radius:13px; background:#FDFCFE; color:#1710A5; font-weight:700; font-size:16px; box-shadow:0 16px 40px -14px rgba(0,0,0,.5);">Escribir por WhatsApp</a>
+          <a class="imp-cta" href="mailto:hola@reacstudio.com" style="padding:16px 30px; border-radius:13px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3); color:#FDFCFE; font-weight:600; font-size:16px;">hola@reacstudio.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <!-- ===== STICKY FOOTER (reveal) ===== -->
+  <section data-screen-label="Footer" style="position:sticky; bottom:0; z-index:0; height:auto; overflow:hidden;">
+        <div style="position:relative; height:auto; display:flex; flex-direction:column; justify-content:flex-end; gap:clamp(28px,4vh,52px); overflow:hidden; background:linear-gradient(135deg,#0d0b1a 0%, #161029 50%, #070712 100%); padding:clamp(40px,6vh,72px) 6vw clamp(28px,4vh,52px);">
+          <div style="position:absolute; right:-40px; top:-40px; width:420px; height:420px; border-radius:50%; background:rgba(124,58,237,.14); filter:blur(90px); animation:softPulse 8s ease-in-out infinite;"></div>
+          <div style="position:absolute; left:-40px; bottom:-40px; width:400px; height:400px; border-radius:50%; background:rgba(46,55,255,.12); filter:blur(90px); animation:softPulse 10s ease-in-out infinite 1s;"></div>
+
+          <div class="imp-foot-cols" style="position:relative; z-index:2; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,4vw,80px); max-width:1000px;">
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#9AA0FF; border-bottom:1px solid rgba(110,116,255,.22); padding-bottom:8px; margin-bottom:4px;">Servicios</div>
+              <span class="imp-flink" style="font-size:14px; color:#868CA6;">Marketing Digital</span>
+              <span class="imp-flink" style="font-size:14px; color:#868CA6;">Desarrollo Web</span>
+              <span class="imp-flink" style="font-size:14px; color:#868CA6;">Automatizaciones IA</span>
+              <span class="imp-flink" style="font-size:14px; color:#868CA6;">Estrategia digital</span>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#9AA0FF; border-bottom:1px solid rgba(110,116,255,.22); padding-bottom:8px; margin-bottom:4px;">Navegación</div>
+              <a class="imp-flink" href="#top" style="font-size:14px; color:#868CA6;">Inicio</a>
+              <a class="imp-flink" href="#servicios" style="font-size:14px; color:#868CA6;">Servicios</a>
+              <a class="imp-flink" href="#proceso" style="font-size:14px; color:#868CA6;">Proceso</a>
+              <a class="imp-flink" href="#faq" style="font-size:14px; color:#868CA6;">Preguntas frecuentes</a>
+              <a class="imp-flink" href="#contacto" style="font-size:14px; color:#868CA6;">Contacto</a>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#9AA0FF; border-bottom:1px solid rgba(110,116,255,.22); padding-bottom:8px; margin-bottom:4px;">Contacto</div>
+              <a class="imp-flink" href="https://wa.me/5491100000000" target="_blank" rel="noopener" style="font-size:14px; color:#868CA6;">WhatsApp</a>
+              <a class="imp-flink" href="mailto:hola@reacstudio.com" style="font-size:14px; color:#868CA6;">hola@reacstudio.com</a>
+              <a class="imp-flink" href="#contacto" style="font-size:14px; color:#868CA6;">Agendar diagnóstico</a>
+            </div>
+          </div>
+
+          <div class="imp-foot-bottom" style="position:relative; z-index:2; display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+            <h2 style="font-size:clamp(58px,11vw,168px); font-weight:800; line-height:.78; letter-spacing:-.045em; margin:0; background:linear-gradient(120deg,#6E74FF 0%,#2E37FF 45%,#7C3AED 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;">Reac Studio<span style="-webkit-text-fill-color:#FA3601; color:#FA3601;">.</span></h2>
+            <div style="text-align:right; min-width:200px;">
+              <p style="font-size:13px; color:#868CA6; margin:0 0 8px;">© 2026 Reac Studio. Todos los derechos reservados.</p>
+              <p style="margin:0 0 14px;"><span class="imp-flink" style="font-size:13px; color:#868CA6; text-decoration:underline; text-underline-offset:2px;">Política de privacidad</span></p>
+              <div style="display:flex; gap:10px; justify-content:flex-end;">
+                <span class="imp-soc" style="width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center; color:#C4C8D8;"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"></circle></svg></span>
+                <span class="imp-soc" style="width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center; color:#C4C8D8;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px; height:17px;"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg></span>
+                <span class="imp-soc" style="width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center; color:#C4C8D8;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px; height:17px;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.39c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.47-.01a.9.9 0 0 0-.65.31c-.22.25-.85.83-.85 2.02 0 1.19.87 2.35.99 2.51.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"></path></svg></span>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Completo&quot;,&quot;Reducido&quot;],&quot;default&quot;:&quot;Completo&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showMetric&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = {
+      scrollY: 0,
+      vh: (typeof window !== 'undefined' ? window.innerHeight : 800),
+      methodTop: 99999,
+      methodH: 600,
+      openIndex: 0,
+      leads: 0,
+      statsInView: false,
+      dashInView: false,
+      showNav: false,
+      tipsOn: false,
+      hoverBar: null,
+      gPct: 0,
+      gSales: 0,
+      gLeads: 0,
+      tg: { wsp: true, leads: false, crm: true, report: false },
+      goals: { camp: 72, leadsg: 48 },
+      budget: 55
+    };
+    this.methodRef = React.createRef();
+    this.statsRef = React.createRef();
+    this.dashRef = React.createRef();
+    this.p1Ref = React.createRef();
+    this.p2Ref = React.createRef();
+    this.pTitleRef = React.createRef();
+    this.p4Ref = React.createRef();
+    this.campNumRef = React.createRef();
+    this.leadsNumRef = React.createRef();
+    this.CAMP_MAX = 10;
+    this.LEADS_MAX = 1000;
+  }
+
+  popNum(ref){
+    // run AFTER the setState re-render commits, otherwise the runtime
+    // re-render clobbers the imperative transform mid-animation
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      const el = ref && ref.current;
+      if (!el) return;
+      el.style.transition = 'none';
+      el.style.transform = 'scale(1.45)';
+      void el.offsetWidth; // force reflow
+      el.style.transition = 'transform .45s cubic-bezier(.22,1,.36,1)';
+      el.style.transform = 'scale(1)';
+    }));
+  }
+
+  getScroller(){
+    // El scroll puede ocurrir en window o en un contenedor del runtime; lo detectamos.
+    let node = this.p4Ref.current ? this.p4Ref.current.parentElement : null;
+    while (node && node !== document.body && node !== document.documentElement){
+      let oy = '';
+      try { oy = getComputedStyle(node).overflowY; } catch(e){}
+      if ((oy === 'auto' || oy === 'scroll' || oy === 'overlay') && node.scrollHeight > node.clientHeight + 4) return node;
+      node = node.parentElement;
+    }
+    return window;
+  }
+
+  applyParallax(){
+    if (this.reduceMotion) return;
+    const pp = this._pp || 0;
+    if (this.p1Ref.current) this.p1Ref.current.style.transform = 'translate(-50%, ' + (70 * pp) + '%)';
+    if (this.p2Ref.current) this.p2Ref.current.style.transform = 'translate(-50%, ' + (55 * pp) + '%)';
+    if (this.pTitleRef.current) this.pTitleRef.current.style.transform = 'translate(-50%, calc(-50% + ' + (40 * pp) + '%))';
+    if (this.p4Ref.current) this.p4Ref.current.style.transform = 'translate(-50%, ' + (10 * pp) + '%)';
+  }
+
+  componentDidUpdate(){
+    // El runtime re-aplica el transform inline del template en cada render y pisa el
+    // parallax imperativo; lo re-aplicamos tras cada commit para que persista.
+    this.applyParallax();
+  }
+
+  componentDidMount(){
+    this.reduceMotion = (typeof window !== 'undefined' && window.matchMedia) ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+    this.onScroll = () => {
+      // Parallax Osmo: capas a distinta velocidad (respeta prefers-reduced-motion).
+      // Lee el scroll del contenedor real (window o ancestro scrolleable del runtime).
+      if (!this.reduceMotion){
+        const sc = this.scroller || window;
+        const sy = (sc === window) ? (window.pageYOffset || document.documentElement.scrollTop || 0) : sc.scrollTop;
+        const vh = (sc === window) ? window.innerHeight : sc.clientHeight;
+        this._pp = Math.max(0, Math.min(1, sy / Math.max(1, vh)));
+        this.applyParallax();
+      }
+
+      const st = { scrollY: window.scrollY, vh: window.innerHeight };
+      // Navbar: visible una vez pasado el 2º módulo (Estadísticas); se esconde al volver a subir
+      const sv2 = this.statsRef.current;
+      if (sv2) st.showNav = sv2.getBoundingClientRect().bottom <= 64;
+      const el = this.methodRef.current;
+      if (el){
+        const r = el.getBoundingClientRect();
+        st.methodTop = r.top + window.scrollY;
+        st.methodH = r.height;
+      }
+      this.setState(st);
+
+      const vh = window.innerHeight;
+      const sv = this.statsRef.current;
+      if (sv && !this.state.statsInView){
+        const r = sv.getBoundingClientRect();
+        if (r.top < vh * 0.75 && r.bottom > 0){
+          this.setState({ statsInView: true });
+          this.animateStats();
+        }
+      }
+      const dv = this.dashRef.current;
+      if (dv && !this.state.dashInView){
+        const r = dv.getBoundingClientRect();
+        if (r.top < vh * 0.75 && r.bottom > 0){
+          this.setState({ dashInView: true });
+          setTimeout(() => this.setState({ tipsOn: true }), 1100);
+        }
+      }
+    };
+    this.scroller = this.getScroller();
+    this.scroller.addEventListener('scroll', this.onScroll, { passive: true });
+    if (this.scroller !== window) window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.onScroll();
+    // Re-detecta el scroller cuando ya cargó el layout/imágenes y re-aplica.
+    setTimeout(() => {
+      const prev = this.scroller;
+      this.scroller = this.getScroller();
+      if (this.scroller !== prev){
+        if (prev && prev.addEventListener) prev.removeEventListener('scroll', this.onScroll);
+        this.scroller.addEventListener('scroll', this.onScroll, { passive: true });
+      }
+      this.onScroll();
+    }, 120);
+
+    // Reveal-on-scroll para todas las secciones
+    if (!this.reduceMotion && 'IntersectionObserver' in window) {
+      const root = (this.el && this.el.closest) ? (this.el.closest('[data-dc-root]') || document) : document;
+      const setup = () => {
+        const els = document.querySelectorAll('.reveal:not(.is-in)');
+        this.revObs = new IntersectionObserver((entries) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) {
+              const d = en.target.getAttribute('data-rv-delay');
+              if (d) en.target.style.transitionDelay = d + 'ms';
+              en.target.classList.add('is-in');
+              this.revObs.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+        els.forEach((el) => this.revObs.observe(el));
+      };
+      setTimeout(setup, 60);
+    } else {
+      setTimeout(() => { document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-in')); }, 60);
+    }
+
+    // count leads 0 -> 142 on mount (timer-based; rAF unavailable in preview)
+    const start = Date.now();
+    const dur = 1600;
+    this.leadTimer = setInterval(() => {
+      const t = Math.min(1, (Date.now() - start) / dur);
+      const e = 1 - Math.pow(1 - t, 3);
+      this.setState({ leads: Math.round(142 * e) });
+      if (t >= 1){ clearInterval(this.leadTimer); this.leadTimer = null; }
+    }, 32);
+  }
+
+  makeDrag(key){
+    return (e) => {
+      e.preventDefault();
+      const el = e.currentTarget;
+      const apply = (ev) => {
+        const r = el.getBoundingClientRect();
+        let p = (ev.clientX - r.left) / r.width;
+        p = Math.max(0, Math.min(1, p));
+        const pct = Math.round(p * 100);
+        if (key === 'budget') this.setState({ budget: pct });
+        else {
+          this.setState(s => ({ goals: Object.assign({}, s.goals, { [key]: pct }) }));
+          // pop the number when its integer value changes
+          if (key === 'camp' || key === 'leadsg') {
+            const max = key === 'camp' ? this.CAMP_MAX : this.LEADS_MAX;
+            const ref = key === 'camp' ? this.campNumRef : this.leadsNumRef;
+            const nv = Math.round(p * max);
+            if (nv !== this['_lastVal_' + key]) {
+              this['_lastVal_' + key] = nv;
+              this.popNum(ref);
+            }
+          }
+        }
+      };
+      apply(e);
+      const move = (ev) => apply(ev);
+      const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
+      window.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+    };
+  }
+
+  animateStats(){
+    if (this._statsRan) return;
+    this._statsRan = true;
+    const start = Date.now();
+    const dur = 2000;
+    if (this.statsTimer) clearInterval(this.statsTimer);
+    this.statsTimer = setInterval(() => {
+      const t = Math.min(1, (Date.now() - start) / dur);
+      const e = 1 - Math.pow(1 - t, 3);
+      this.setState({ gPct: Math.round(100 * e), gSales: 4.2 * e, gLeads: Math.round(1240 * e) });
+      if (t >= 1){ clearInterval(this.statsTimer); this.statsTimer = null; }
+    }, 33);
+  }
+
+  componentWillUnmount(){
+    if (this.scroller && this.scroller.removeEventListener) this.scroller.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.revObs) this.revObs.disconnect();
+    if (this.leadTimer) clearInterval(this.leadTimer);
+    if (this.statsTimer) clearInterval(this.statsTimer);
+  }
+
+  buildTitle(){
+    const segs = [
+      { text: 'Marketing, web y automatización con IA', grad: true },
+      { text: ' en un solo lugar.', grad: false }
+    ];
+    const gradStyle = { background:'linear-gradient(115deg,#2E37FF 0%, #6E74FF 52%, #7C3AED 100%)', WebkitBackgroundClip:'text', backgroundClip:'text', color:'transparent' };
+    const out = [];
+    let k = 0;
+    segs.forEach((seg, si) => {
+      const words = seg.text.split(' ');
+      words.forEach((word, wi) => {
+        // leading space between words (not before the very first word)
+        if (!(si === 0 && wi === 0)) {
+          out.push(React.createElement('span', { key: 'sp' + si + '_' + wi, style:{ display:'inline-block', width:'0.28em' } }, '\u00A0'));
+        }
+        const letters = word.split('').map((ch, ci) => {
+          const delay = (0.35 + k * 0.05).toFixed(3) + 's';
+          k++;
+          return React.createElement('span', {
+            key: 'c' + si + '_' + wi + '_' + ci,
+            className: 'hero-char',
+            style: Object.assign({ animationDelay: delay }, seg.grad ? gradStyle : null)
+          }, ch);
+        });
+        out.push(React.createElement('span', { key: 'w' + si + '_' + wi, style:{ display:'inline-block', whiteSpace:'nowrap' } }, letters));
+      });
+    });
+    return out;
+  }
+
+  renderVals(){
+    const data = [
+      { num: '01', title: 'Diagnóstico', body: 'Entendemos tu negocio, tu oferta y dónde están las fugas de oportunidades.' },
+      { num: '02', title: 'Estrategia', body: 'Definimos el plan: canales, mensajes, web y automatizaciones necesarias.' },
+      { num: '03', title: 'Ejecución', body: 'Lanzamos campañas, construimos la web y conectamos los sistemas.' },
+      { num: '04', title: 'Medición', body: 'Medimos, optimizamos y escalamos lo que funciona. Sin humo.' }
+    ];
+    const n = data.length;
+    const p = (this.state.scrollY + this.state.vh * 0.7 - this.state.methodTop) / (this.state.methodH || 1);
+    const steps = data.map((s, i) => {
+      const on = (p * (n + 0.5)) > (i + 0.35);
+      return {
+        num: s.num,
+        title: s.title,
+        body: s.body,
+        numCol: on ? '#FF7A4D' : 'rgba(255,255,255,.25)',
+        glow: on ? '0 0 26px rgba(250,54,1,.6)' : 'none',
+        titleCol: on ? '#FDFCFE' : 'rgba(255,255,255,.45)',
+        bodyCol: on ? 'rgba(255,255,255,.84)' : 'rgba(255,255,255,.32)'
+      };
+    });
+
+    const faqData = [
+      { q: '¿Cómo empezamos a trabajar juntos?', a: 'Arrancamos con una llamada de diagnóstico sin costo. Revisamos tu presencia digital, tus canales de venta y tus procesos, y te mostramos qué conviene mejorar primero. Si tiene sentido avanzar, armamos una propuesta a medida.' },
+      { q: '¿Puedo contratar un solo servicio o tiene que ser todo?', a: 'Podés empezar por un módulo específico (marketing, web o automatización) o armar una solución integral. Recomendamos por dónde conviene empezar según tu objetivo y tu presupuesto, sin obligarte a contratar de más.' },
+      { q: '¿Cuánto cuesta?', a: 'Trabajamos por proyecto, no por suscripción. Marketing Digital arranca desde US$150, Desarrollo Web desde US$200 y Automatizaciones con IA desde US$250. El precio final depende del alcance, que definimos juntos en el diagnóstico.' },
+      { q: '¿En cuánto tiempo se ven resultados?', a: 'Depende del servicio: una web puede estar lista en pocas semanas, mientras que las campañas necesitan un período de aprendizaje y optimización. No prometemos resultados mágicos; sí medimos todo para mejorar de forma continua.' },
+      { q: '¿Trabajan con negocios de cualquier rubro y ubicación?', a: 'Sí. Trabajamos de forma remota con negocios de distintos rubros en Argentina y la región. Lo importante es que tengas un objetivo comercial claro y ganas de ordenar tu sistema digital.' },
+      { q: '¿Cómo miden los resultados?', a: 'Dejamos analíticas y seguimiento configurados (eventos, conversiones, leads) para tomar decisiones por datos y no por intuición. Te compartimos qué funciona y qué ajustamos en cada etapa.' }
+    ];
+    const faqs = faqData.map((f, i) => {
+      const open = this.state.openIndex === i;
+      return {
+        q: f.q,
+        a: f.a,
+        rows: open ? '1fr' : '0fr',
+        rot: open ? '135deg' : '0deg',
+        shadow: open ? '0 18px 44px -22px rgba(46,55,255,.5)' : '0 1px 2px rgba(20,20,60,.04)',
+        onToggle: () => this.setState((st) => ({ openIndex: st.openIndex === i ? -1 : i }))
+      };
+    });
+
+    const tBase = [
+      { quote: '"En tres meses pasamos de no tener consultas a no dar abasto. Las campañas y el chatbot de IA hacen el trabajo pesado por nosotros."', name: 'Martín Rivas', role: 'Estudio jurídico · Córdoba', initials: 'MR', grad: 'linear-gradient(135deg,#1F27EB,#7C3AED)' },
+      { quote: '"La web nueva nos cambió la cara de la marca y, lo mejor, ahora sabemos exactamente de dónde vienen los clientes. Todo medido."', name: 'Lucía Fernández', role: 'Tienda de deco · Rosario', initials: 'LF', grad: 'linear-gradient(135deg,#2E37FF,#1F27EB)' },
+      { quote: '"Automatizaron el seguimiento de leads y el CRM. Dejamos de perder oportunidades por no contestar a tiempo. Un antes y un después."', name: 'Diego Gómez', role: 'Inmobiliaria · Buenos Aires', initials: 'DG', grad: 'linear-gradient(135deg,#7C3AED,#6E74FF)' },
+      { quote: '"Ahora entiendo mis números. El dashboard me muestra qué campaña trae clientes y cuál no. Tomamos decisiones con datos, no a ciegas."', name: 'Sofía Castro', role: 'Centro estético · Mendoza', initials: 'SC', grad: 'linear-gradient(135deg,#1F27EB,#2E37FF)' },
+      { quote: '"Profesionales y al grano. Nada de humo: propusieron, ejecutaron y midieron. El retorno de la inversión se vio rapidísimo."', name: 'Pablo Suárez', role: 'Gimnasio · La Plata', initials: 'PS', grad: 'linear-gradient(135deg,#6E74FF,#7C3AED)' }
+    ];
+    const testimonials = tBase.concat(tBase);
+
+    const heights = [44, 70, 56, 88, 72, 96, 80, 66];
+    const labels = ['142','248','196','410','312','520','398','347'];
+    const peak = heights.indexOf(Math.max.apply(null, heights));
+    const hv = this.state.hoverBar;
+    const bars = heights.map((h, i) => ({
+      h: (this.state.dashInView ? h : 0) + '%',
+      v: labels[i],
+      d: (i * 0.09).toFixed(2) + 's',
+      tip: (hv === i) ? 1 : ((hv === null && this.state.tipsOn && i === peak) ? 1 : 0),
+      tf: (hv === i) ? 'translateY(-4px) scaleX(1.08)' : 'translateY(0) scaleX(1)',
+      op: (hv === null || hv === i) ? 1 : 0.4,
+      sh: (hv === i) ? '0 0 30px rgba(124,58,237,.75)' : '0 0 18px rgba(46,55,255,.4)',
+      onEnter: () => this.setState({ hoverBar: i }),
+      onLeave: () => this.setState({ hoverBar: null })
+    }));
+
+    const fmt = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+    const onGrad = 'linear-gradient(135deg,#1F27EB,#7C3AED)';
+    const offTrack = '#15182B';
+    const budgetAmt = Math.round((150 + this.state.budget / 100 * 2850) / 50) * 50;
+
+    return {
+      toggleWsp: () => this.setState(s => ({ tg: Object.assign({}, s.tg, { wsp: !s.tg.wsp }) })),
+      toggleLeads: () => this.setState(s => ({ tg: Object.assign({}, s.tg, { leads: !s.tg.leads }) })),
+      toggleCrm: () => this.setState(s => ({ tg: Object.assign({}, s.tg, { crm: !s.tg.crm }) })),
+      toggleReport: () => this.setState(s => ({ tg: Object.assign({}, s.tg, { report: !s.tg.report }) })),
+      wspTrack: this.state.tg.wsp ? onGrad : offTrack,
+      leadsTrack: this.state.tg.leads ? onGrad : offTrack,
+      crmTrack: this.state.tg.crm ? onGrad : offTrack,
+      reportTrack: this.state.tg.report ? onGrad : offTrack,
+      wspKnob: this.state.tg.wsp ? '23px' : '3px',
+      leadsKnob: this.state.tg.leads ? '23px' : '3px',
+      crmKnob: this.state.tg.crm ? '23px' : '3px',
+      reportKnob: this.state.tg.report ? '23px' : '3px',
+      dragCamp: this.makeDrag('camp'),
+      dragLeadsG: this.makeDrag('leadsg'),
+      dragBudget: this.makeDrag('budget'),
+      campW: this.state.goals.camp + '%',
+      leadsGW: this.state.goals.leadsg + '%',
+      campNumRef: this.campNumRef,
+      leadsNumRef: this.leadsNumRef,
+      campMax: this.CAMP_MAX,
+      leadsGMax: this.LEADS_MAX,
+      campVal: Math.round(this.state.goals.camp / 100 * this.CAMP_MAX),
+      leadsGVal: Math.round(this.state.goals.leadsg / 100 * this.LEADS_MAX),
+      budgetW: this.state.budget + '%',
+      budgetText: 'US$' + fmt(budgetAmt),
+      testimonials,
+      motionAttr: (this.props.motion === 'Reducido') ? 'off' : 'on',
+      navTransform: this.state.showNav ? 'translateY(0)' : 'translateY(-130%)',
+      navOpacity: this.state.showNav ? 1 : 0,
+      navPE: this.state.showNav ? 'auto' : 'none',
+      showMetric: this.props.showMetric !== false,
+      titleNodes: this.buildTitle(),
+      leadsText: '+' + this.state.leads + '%',
+      methodRef: this.methodRef,
+      statsRef: this.statsRef,
+      dashRef: this.dashRef,
+      p1Ref: this.p1Ref,
+      p2Ref: this.p2Ref,
+      pTitleRef: this.pTitleRef,
+      p4Ref: this.p4Ref,
+      gaugeOffset: this.state.statsInView ? 0 : 100,
+      pctText: this.state.gPct + '%',
+      salesText: '$' + this.state.gSales.toFixed(1) + 'M',
+      leadsCountText: fmt(this.state.gLeads),
+      bars,
+      steps,
+      faqs
+    };
+  }
+}
+</script>
+</body>
+</html>
