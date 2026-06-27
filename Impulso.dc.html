@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -10,7 +10,7 @@
 <meta name="author" content="Reac Studio">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#070712">
-<!-- TODO dominio: cuando lo tengas, descomentá -> <link rel="canonical" href="https://TU-DOMINIO/"> -->
+<link rel="canonical" href="https://reacstudio.com/">
 
 <!-- ===== Favicon (logo inline, sin request extra) ===== -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23070712'/%3E%3Crect x='30' y='30' width='40' height='40' rx='8' fill='%231F27EB'/%3E%3Ctext x='50' y='58' font-family='sans-serif' font-size='26' font-weight='700' fill='%23FDFCFE' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
@@ -21,17 +21,17 @@
 <meta property="og:site_name" content="Reac Studio">
 <meta property="og:title" content="Reac Studio — Más gente te encuentra, te consulta y te compra">
 <meta property="og:description" content="Diseñamos sitios web y estrategias que hacen crecer tu negocio. Pedí tu diagnóstico gratis.">
-<meta property="og:image" content="og-image.png"><!-- TODO dominio: cambiar a https://TU-DOMINIO/og-image.png para que funcione en redes sociales -->
+<meta property="og:image" content="https://reacstudio.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Reac Studio — diseño y desarrollo web">
-<!-- TODO dominio: cuando lo tengas, agregá -> <meta property="og:url" content="https://TU-DOMINIO/"> y volvé og:image absoluta: https://TU-DOMINIO/og-image.png -->
+<meta property="og:url" content="https://reacstudio.com/">
 
 <!-- ===== Twitter Card ===== -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Reac Studio — Más gente te encuentra, te consulta y te compra">
 <meta name="twitter:description" content="Diseñamos sitios web y estrategias que hacen crecer tu negocio. Pedí tu diagnóstico gratis.">
-<meta name="twitter:image" content="og-image.png"><!-- TODO dominio: cambiar a https://TU-DOMINIO/og-image.png -->
+<meta name="twitter:image" content="https://reacstudio.com/og-image.png">
 
 <!-- ===== Structured data ===== -->
 <script type="application/ld+json">
@@ -42,23 +42,21 @@
   "description": "Estudio de diseño y desarrollo web. Hacemos que más gente te encuentre, te consulte y te compre.",
   "areaServed": "AR",
   "knowsLanguage": "es",
-  "url": "https://TODO-TU-DOMINIO/",
-  "telephone": "+54-TODO-NUMERO",
-  "email": "hola@TODO-TU-DOMINIO",
+  "url": "https://reacstudio.com/",
+  "telephone": ["+543544434403", "+543544581671"],
+  "email": "hola@reacstudio.com",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "AR",
-    "addressRegion": "TODO-PROVINCIA"
+    "addressRegion": "Córdoba"
   },
   "sameAs": [
-    "https://www.instagram.com/TODO-INSTAGRAM",
-    "https://www.linkedin.com/company/TODO-LINKEDIN"
+    "https://www.instagram.com/TODO-INSTAGRAM"
   ]
 }
 </script>
 
-<!-- ===== FAQ structured data (completar con el contenido real del accordion) ===== -->
-<!-- TODO: reemplazar cada pregunta/respuesta con el texto real del FAQ -->
+<!-- ===== FAQ structured data (sincronizado con el accordion #faq) ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,18 +64,33 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "TODO-PREGUNTA-1",
-      "acceptedAnswer": { "@type": "Answer", "text": "TODO-RESPUESTA-1" }
+      "name": "¿Cómo empezamos a trabajar juntos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Arrancamos con una llamada de diagnóstico sin costo. Revisamos tu presencia digital, tus canales de venta y tus procesos, y te mostramos qué conviene mejorar primero. Si tiene sentido avanzar, armamos una propuesta a medida." }
     },
     {
       "@type": "Question",
-      "name": "TODO-PREGUNTA-2",
-      "acceptedAnswer": { "@type": "Answer", "text": "TODO-RESPUESTA-2" }
+      "name": "¿Puedo contratar un solo servicio o tiene que ser todo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Podés empezar por un módulo específico (marketing, web o automatización) o armar una solución integral. Recomendamos por dónde conviene empezar según tu objetivo y tu presupuesto, sin obligarte a contratar de más." }
     },
     {
       "@type": "Question",
-      "name": "TODO-PREGUNTA-3",
-      "acceptedAnswer": { "@type": "Answer", "text": "TODO-RESPUESTA-3" }
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos por proyecto, no por suscripción. Marketing Digital arranca desde US$150, Desarrollo Web desde US$200 y Automatizaciones con IA desde US$250. El precio final depende del alcance, que definimos juntos en el diagnóstico." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En cuánto tiempo se ven resultados?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del servicio: una web puede estar lista en pocas semanas, mientras que las campañas necesitan un período de aprendizaje y optimización. No prometemos resultados mágicos; sí medimos todo para mejorar de forma continua." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajan con negocios de cualquier rubro y ubicación?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Trabajamos de forma remota con negocios de distintos rubros en Argentina y la región. Lo importante es que tengas un objetivo comercial claro y ganas de ordenar tu sistema digital." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo miden los resultados?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dejamos analíticas y seguimiento configurados (eventos, conversiones, leads) para tomar decisiones por datos y no por intuición. Te compartimos qué funciona y qué ajustamos en cada etapa." }
     }
   ]
 }
@@ -611,7 +624,7 @@
       <div style="padding:32px 36px 40px; display:flex; gap:34px; flex-wrap:wrap;">
         <div style="flex:0 0 200px;">
           <div style="font-size:13px; color:#868CA6; margin-bottom:6px;">Leads del mes</div>
-          <div style="font-size:36px; font-weight:700; letter-spacing:-.03em; color:#FDFCFE; margin-bottom:4px;">1.847</div>
+          <div style="font-size:36px; font-weight:700; letter-spacing:-.03em; color:#FDFCFE; margin-bottom:4px;">1.240</div>
           <div style="display:inline-flex; align-items:center; gap:5px; font-size:13px; color:#FF7A4D; font-weight:600;">▲ +18.4% vs. mes anterior</div>
           <div style="margin-top:28px; display:flex; flex-direction:column; gap:14px;">
             <div style="display:flex; align-items:center; gap:10px;"><span style="width:10px;height:10px;border-radius:3px;background:#1F27EB;"></span><span style="font-size:13px;color:#C4C8D8;">Consultas</span></div>
@@ -859,7 +872,7 @@
           <button type="submit" style="margin-top:4px; padding:15px 28px; border-radius:12px; border:none; cursor:pointer; font-size:16px; font-weight:700; font-family:inherit; color:#FDFCFE; background:linear-gradient(120deg,#FA3601 0%,#d42d00 100%); box-shadow:0 12px 32px -10px rgba(250,54,1,.55); letter-spacing:.01em; transition:opacity .2s;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Pedir diagnóstico gratis</button>
         </form>
         <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-          <a class="imp-cta" href="https://wa.me/5491100000000?text=Hola%20Reac%20Studio,%20quiero%20un%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener" style="padding:16px 32px; border-radius:13px; background:#FDFCFE; color:#1710A5; font-weight:700; font-size:16px; box-shadow:0 16px 40px -14px rgba(0,0,0,.5);">Escribir por WhatsApp</a>
+          <a class="imp-cta" href="https://wa.me/5493544434403?text=Hola%20Reac%20Studio,%20quiero%20un%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener" style="padding:16px 32px; border-radius:13px; background:#FDFCFE; color:#1710A5; font-weight:700; font-size:16px; box-shadow:0 16px 40px -14px rgba(0,0,0,.5);">Escribir por WhatsApp</a>
           <a class="imp-cta" href="mailto:hola@reacstudio.com" style="padding:16px 30px; border-radius:13px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3); color:#FDFCFE; font-weight:600; font-size:16px;">hola@reacstudio.com</a>
         </div>
       </div>
@@ -891,7 +904,7 @@
             </div>
             <div style="display:flex; flex-direction:column; gap:12px;">
               <div style="font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#9AA0FF; border-bottom:1px solid rgba(110,116,255,.22); padding-bottom:8px; margin-bottom:4px;">Contacto</div>
-              <a class="imp-flink" href="https://wa.me/5491100000000" target="_blank" rel="noopener" style="font-size:14px; color:#868CA6;">WhatsApp</a>
+              <a class="imp-flink" href="https://wa.me/5493544434403" target="_blank" rel="noopener" style="font-size:14px; color:#868CA6;">WhatsApp</a>
               <a class="imp-flink" href="mailto:hola@reacstudio.com" style="font-size:14px; color:#868CA6;">hola@reacstudio.com</a>
               <a class="imp-flink" href="#contacto" style="font-size:14px; color:#868CA6;">Agendar diagnóstico</a>
             </div>
@@ -1125,7 +1138,7 @@ class Component extends DCLogic {
     this.statsTimer = setInterval(() => {
       const t = Math.min(1, (Date.now() - start) / dur);
       const e = 1 - Math.pow(1 - t, 3);
-      this.setState({ gPct: Math.round(100 * e), gSales: 4.2 * e, gLeads: Math.round(1240 * e) });
+      this.setState({ gPct: Math.round(97 * e), gSales: 4.2 * e, gLeads: Math.round(1240 * e) });
       if (t >= 1){ clearInterval(this.statsTimer); this.statsTimer = null; }
     }, 33);
   }
@@ -1345,7 +1358,7 @@ class Component extends DCLogic {
       p2Ref: this.p2Ref,
       pTitleRef: this.pTitleRef,
       p4Ref: this.p4Ref,
-      gaugeOffset: this.state.statsInView ? 0 : 100,
+      gaugeOffset: this.state.statsInView ? 3 : 100,
       pctText: this.state.gPct + '%',
       salesText: '$' + this.state.gSales.toFixed(1) + 'M',
       leadsCountText: fmt(this.state.gLeads),
