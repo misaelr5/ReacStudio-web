@@ -162,7 +162,7 @@
 </style>
 </head>
 <body>
-<!-- ===== Preloader · pantalla de carga (hermano de <x-dc>, no lo toca el hydrate de React) ===== -->
+<!-- ===== Preloader · pantalla de carga (hermano del root dc, no lo toca el hydrate de React) ===== -->
 <div id="reac-preloader" role="status" aria-live="polite" aria-label="Cargando Reac Studio">
   <div class="pl-bg"></div>
   <div class="pl-beams"><i></i><i></i><i></i><i></i></div>
@@ -224,6 +224,35 @@
     @media (prefers-reduced-motion: reduce){.ib-dash-wrap:hover{transform:none !important;}}
     .imp-cta:hover{transform:translateY(-2px);}
     .imp-cta{transition:transform .25s ease, box-shadow .25s ease;}
+
+    /* ===== Shiny CTA · borde cónico animado + barrido (colores de marca) ===== */
+    @property --sh-angle{syntax:"<angle>"; initial-value:0deg; inherits:false;}
+    .imp-cta, .proj-cta, .shiny-cta{position:relative; isolation:isolate; overflow:hidden;}
+    /* anillo de luz que gira por el borde */
+    .imp-cta::after, .proj-cta::after, .shiny-cta::after{
+      content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px; z-index:2; pointer-events:none;
+      background:conic-gradient(from var(--sh-angle),
+        transparent 0deg, #2E37FF 38deg, #6E74FF 64deg, #FDFCFE 84deg, #7C3AED 110deg, #FA3601 140deg, transparent 170deg, transparent 360deg);
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor; mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite:exclude;
+      animation:shAngle 3s linear infinite;
+    }
+    /* barrido tipo brillo */
+    .imp-cta::before, .proj-cta::before, .shiny-cta::before{
+      content:""; position:absolute; inset:0; border-radius:inherit; z-index:1; pointer-events:none; opacity:.55;
+      background:linear-gradient(115deg, transparent 38%, rgba(255,255,255,.45) 50%, transparent 62%);
+      transform:translateX(-130%); animation:shShine 3s linear infinite;
+    }
+    .imp-cta:hover::after, .imp-cta:focus-visible::after,
+    .proj-cta:hover::after, .proj-cta:focus-visible::after,
+    .shiny-cta:hover::after, .shiny-cta:focus-visible::after{animation-duration:1.4s;}
+    .imp-cta:hover::before, .proj-cta:hover::before, .shiny-cta:hover::before{opacity:.85; animation-duration:1.4s;}
+    @keyframes shAngle{to{--sh-angle:360deg;}}
+    @keyframes shShine{0%{transform:translateX(-130%);}55%,100%{transform:translateX(130%);}}
+    @media (prefers-reduced-motion: reduce){
+      .imp-cta::before, .imp-cta::after, .proj-cta::before, .proj-cta::after, .shiny-cta::before, .shiny-cta::after{animation:none !important;}
+      .imp-cta::before, .proj-cta::before, .shiny-cta::before{opacity:0 !important;}
+    }
     .imp-faq:hover{border-color:#2E37FF !important; transform:scale(1.02) translateY(-5px);}
     @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
     .imp-track{animation:marquee 36s linear infinite;}
@@ -376,7 +405,7 @@
           </div>
           <div style="font-size:42px; font-weight:700; letter-spacing:-.03em; margin-bottom:4px; font-variant-numeric:tabular-nums;">2.847</div>
           <div style="font-size:13px; color:#868CA6; margin-bottom:4px;">en los últimos 90 días</div>
-          <div style="font-size:11.5px; color:#5C6178; margin-bottom:20px;">Vista de ejemplo del panel que vas a tener</div>
+          <div style="font-size:11.5px; color:#7A819B; margin-bottom:20px;">Vista de ejemplo del panel que vas a tener</div>
           <svg viewBox="0 0 300 80" style="width:100%; height:80px; display:block; overflow:visible;">
             <defs>
               <linearGradient id="impSpark" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F27EB"></stop><stop offset="1" stop-color="#6E74FF"></stop></linearGradient>
@@ -387,7 +416,7 @@
             <circle cx="300" cy="6" r="4" fill="#6E74FF" style="filter:drop-shadow(0 0 6px #6E74FF);"></circle>
           </svg>
           <div style="display:flex; justify-content:space-between; margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.1);">
-            <div><div style="font-size:20px; font-weight:700;">4.2x</div><div style="font-size:11.5px; color:#868CA6;">ROAS</div><div style="font-size:10px; color:#5C6178; margin-top:2px;">objetivo</div></div>
+            <div><div style="font-size:20px; font-weight:700;">4.2x</div><div style="font-size:11.5px; color:#868CA6;">ROAS</div><div style="font-size:10px; color:#7A819B; margin-top:2px;">objetivo</div></div>
             <div><div style="font-size:20px; font-weight:700;">-38%</div><div style="font-size:11.5px; color:#868CA6;">CPL</div></div>
             <div><div style="font-size:20px; font-weight:700;">24/7</div><div style="font-size:11.5px; color:#868CA6;">IA activa</div></div>
           </div>
@@ -542,7 +571,7 @@
       <p class="reveal" data-rv-delay="170" style="font-size:17px; color:#868CA6; max-width:540px; margin:0 0 52px;">Campañas, web y automatizaciones funcionando en piloto automático mientras vos te enfocás en tu negocio.</p>
       <div class="reveal" data-rv-delay="220" style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
         <span style="font-size:13.5px; font-weight:600; color:#6E74FF; letter-spacing:.04em;">↓ Probá cómo funciona</span>
-        <span style="font-size:12px; color:#5C6178;">— los elementos son interactivos</span>
+        <span style="font-size:12px; color:#7A819B;">— los elementos son interactivos</span>
       </div>
       <div class="ib-bento reveal" style="display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:182px; gap:18px;">
         <!-- A: toggles -->
@@ -574,11 +603,11 @@
         <div class="ib-bento-card" style="grid-column:span 2; border-radius:26px; padding:30px 34px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); display:flex; flex-direction:column; justify-content:center; gap:22px;">
           <div style="font-size:18px; font-weight:700; letter-spacing:-.01em;">Objetivos del mes</div>
           <div>
-            <div style="display:flex; justify-content:space-between; font-size:13px; color:#868CA6; margin-bottom:8px;"><span>Campañas activas</span><span ref="{{ campNumRef }}" style="color:#C4C8D8; font-weight:700; font-variant-numeric:tabular-nums; display:inline-block; transform-origin:right center;"><span style="color:#FDFCFE;">{{ campVal }}</span><span style="color:#5C6178;"> / {{ campMax }}</span></span></div>
+            <div style="display:flex; justify-content:space-between; font-size:13px; color:#868CA6; margin-bottom:8px;"><span>Campañas activas</span><span ref="{{ campNumRef }}" style="color:#C4C8D8; font-weight:700; font-variant-numeric:tabular-nums; display:inline-block; transform-origin:right center;"><span style="color:#FDFCFE;">{{ campVal }}</span><span style="color:#7A819B;"> / {{ campMax }}</span></span></div>
             <div onPointerDown="{{ dragCamp }}" style="position:relative; height:9px; border-radius:999px; background:rgba(255,255,255,.08); cursor:ew-resize; touch-action:none;"><div style="height:100%; border-radius:999px; background:linear-gradient(90deg,#1F27EB,#7C3AED); width:{{ campW }}; transition:width .1s ease-out;"></div><span style="position:absolute; top:50%; left:{{ campW }}; width:16px; height:16px; border-radius:50%; background:#FDFCFE; transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(0,0,0,.5); transition:left .1s ease-out;"></span></div>
           </div>
           <div>
-            <div style="display:flex; justify-content:space-between; font-size:13px; color:#868CA6; margin-bottom:8px;"><span>Leads contactados</span><span ref="{{ leadsNumRef }}" style="color:#C4C8D8; font-weight:700; font-variant-numeric:tabular-nums; display:inline-block; transform-origin:right center;"><span style="color:#FDFCFE;">{{ leadsGVal }}</span><span style="color:#5C6178;"> / {{ leadsGMax }}</span></span></div>
+            <div style="display:flex; justify-content:space-between; font-size:13px; color:#868CA6; margin-bottom:8px;"><span>Leads contactados</span><span ref="{{ leadsNumRef }}" style="color:#C4C8D8; font-weight:700; font-variant-numeric:tabular-nums; display:inline-block; transform-origin:right center;"><span style="color:#FDFCFE;">{{ leadsGVal }}</span><span style="color:#7A819B;"> / {{ leadsGMax }}</span></span></div>
             <div onPointerDown="{{ dragLeadsG }}" style="position:relative; height:9px; border-radius:999px; background:rgba(255,255,255,.08); cursor:ew-resize; touch-action:none;"><div style="height:100%; border-radius:999px; background:linear-gradient(90deg,#2E37FF,#1F27EB); width:{{ leadsGW }}; transition:width .1s ease-out;"></div><span style="position:absolute; top:50%; left:{{ leadsGW }}; width:16px; height:16px; border-radius:50%; background:#FDFCFE; transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(0,0,0,.5); transition:left .1s ease-out;"></span></div>
           </div>
         </div>
@@ -817,7 +846,7 @@
         <div style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; background:linear-gradient(120deg,#2E37FF,#6E74FF); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:18px;">Testimonios</div>
         <h2 style="font-size:clamp(32px,4vw,52px); line-height:1.06; font-weight:700; letter-spacing:-.03em; margin:0 0 18px;">Qué dicen sobre nosotros</h2>
         <p style="font-size:17px; color:#868CA6; margin:0; line-height:1.55;">Así se ve trabajar con nosotros: negocios que ordenaron su sistema digital y empezaron a vender mejor.</p>
-        <p style="font-size:12px; color:#5C6178; margin:12px 0 0; letter-spacing:.02em;">Testimonios ilustrativos — reemplazables por reseñas reales de tus clientes.</p>
+        <p style="font-size:12px; color:#7A819B; margin:12px 0 0; letter-spacing:.02em;">Testimonios ilustrativos — reemplazables por reseñas reales de tus clientes.</p>
       </div>
       <div class="imp-marquee reveal" style="position:relative; overflow:hidden; padding:48px 0; margin:-48px 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);">
         <div class="imp-track" style="display:flex; gap:20px; width:max-content;">
@@ -845,7 +874,7 @@
         <div style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.72); margin-bottom:18px;">Hablemos</div>
         <h2 style="font-size:clamp(32px,4.4vw,56px); line-height:1.05; font-weight:800; letter-spacing:-.03em; margin:0 auto 16px; max-width:760px;">Empecemos con un diagnóstico gratis.</h2>
         <p style="font-size:17px; line-height:1.55; color:rgba(255,255,255,.82); max-width:560px; margin:0 auto 36px;">Sin compromiso y sin vueltas: revisamos tu presencia digital y te decimos por dónde conviene empezar.</p>
-        <form action="#" method="post" style="max-width:480px; margin:0 auto 36px; display:flex; flex-direction:column; gap:14px; text-align:left;">
+        <form id="ct-form" action="https://wa.me/5493544434403" method="get" style="max-width:480px; margin:0 auto 36px; display:flex; flex-direction:column; gap:14px; text-align:left;">
           <div>
             <label for="ct-nombre" style="display:block; font-size:13px; font-weight:600; color:rgba(255,255,255,.7); margin-bottom:6px; letter-spacing:.04em;">Nombre</label>
             <input id="ct-nombre" type="text" name="nombre" required placeholder="Tu nombre" style="width:100%; box-sizing:border-box; padding:13px 16px; border-radius:10px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.07); color:#FDFCFE; font-size:15px; outline:none; font-family:inherit;" />
@@ -1424,6 +1453,37 @@ class Component extends DCLogic {
 
   // Red de seguridad: si rAF/transiciones se cuelgan, igual se cierra.
   setTimeout(remove, DURATION + 4000);
+})();
+</script>
+
+<!-- ===== Formulario de contacto → abre WhatsApp con los datos cargados ===== -->
+<script>
+(function(){
+  var WHATSAPP_NUMBER = '5493544434403'; // mismo número del CTA
+  function init(){
+    var form = document.getElementById('ct-form');
+    if(!form || form.dataset.bound) return;
+    form.dataset.bound = '1';
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nombre = (form.querySelector('#ct-nombre') || {}).value || '';
+      var servicioEl = form.querySelector('#ct-servicio');
+      var presEl = form.querySelector('#ct-presupuesto');
+      var servicio = servicioEl ? (servicioEl.options[servicioEl.selectedIndex] || {}).text : '';
+      var presupuesto = presEl ? (presEl.options[presEl.selectedIndex] || {}).text : '';
+      var msg = 'Hola Reac Studio, quiero un diagnóstico gratis.\n'
+              + '• Nombre: ' + nombre.trim() + '\n'
+              + '• Servicio de interés: ' + servicio + '\n'
+              + '• Presupuesto aproximado: ' + presupuesto;
+      var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank', 'noopener');
+    });
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+  // El runtime de DC puede montar el form más tarde: reintento corto.
+  setTimeout(init, 500);
+  setTimeout(init, 1500);
 })();
 </script>
 </body>
