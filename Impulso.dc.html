@@ -247,6 +247,8 @@
     .proj-cta:hover::after, .proj-cta:focus-visible::after,
     .shiny-cta:hover::after, .shiny-cta:focus-visible::after{animation-duration:1.4s;}
     .imp-cta:hover::before, .proj-cta:hover::before, .shiny-cta:hover::before{opacity:.85; animation-duration:1.4s;}
+    .no-shiny::before, .no-shiny::after{content:none !important;}
+    .shine-only::after{content:none !important;} /* solo el glow que barre, sin el anillo del borde */
     @keyframes shAngle{to{--sh-angle:360deg;}}
     @keyframes shShine{0%{transform:translateX(-130%);}55%,100%{transform:translateX(130%);}}
     @media (prefers-reduced-motion: reduce){
@@ -257,6 +259,30 @@
     @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
     .imp-track{animation:marquee 36s linear infinite;}
     .imp-marquee:hover .imp-track{animation-play-state:paused;}
+
+    /* ===== Formulario de contacto ===== */
+    .ct-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+    @media(max-width:560px){.ct-grid{grid-template-columns:1fr;}}
+    .ct-row{display:flex; flex-direction:column;}
+    .ct-label{display:block; font-size:13.5px; font-weight:700; color:#FDFCFE; margin-bottom:8px; letter-spacing:.01em;}
+    .ct-wrap{position:relative;}
+    .ct-wrap > svg{position:absolute; left:15px; top:15px; width:18px; height:18px; color:#8E94FF; pointer-events:none;}
+    .ct-wrap.ct-area > svg{top:16px;}
+    .ct-field{width:100%; box-sizing:border-box; padding:14px 16px 14px 44px; border-radius:13px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.07); color:#FDFCFE; font-size:15px; font-family:inherit; outline:none; transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;}
+    .ct-field::placeholder{color:#9AA0BE;}
+    .ct-field:focus{border-color:#6E74FF; background:rgba(255,255,255,.1); box-shadow:0 0 0 3px rgba(110,116,255,.28);}
+    textarea.ct-field{min-height:150px; resize:vertical; line-height:1.55;}
+    .ct-send{margin-top:4px; width:100%; display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:16px 28px; border-radius:14px; border:none; cursor:pointer; font-size:16px; font-weight:700; font-family:inherit; color:#FDFCFE; background:linear-gradient(120deg,#FA3601 0%,#d42d00 100%); box-shadow:0 14px 34px -10px rgba(250,54,1,.6); letter-spacing:.01em; transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;}
+    .ct-send:hover{transform:translateY(-2px); box-shadow:0 18px 42px -12px rgba(250,54,1,.7);}
+    .ct-note{font-size:12.5px; color:rgba(255,255,255,.62); text-align:center; margin:16px auto 0; max-width:440px; line-height:1.5;}
+    .ct-note a{color:#FDFCFE; text-decoration:underline; text-underline-offset:2px;}
+
+    /* ===== Dropdown de período (metric card) ===== */
+    .ib-period:hover{border-color:rgba(110,116,255,.45) !important; background:rgba(255,255,255,.09) !important;}
+    .ib-period-menu{transform-origin:top right; animation:periodIn .22s cubic-bezier(.16,1,.3,1);}
+    .ib-period-item:hover{background:rgba(110,116,255,.16) !important; color:#FDFCFE !important;}
+    @keyframes periodIn{from{opacity:0; transform:translateY(-8px) scale(.96);}to{opacity:1; transform:translateY(0) scale(1);}}
+    @media (prefers-reduced-motion: reduce){.ib-period-menu{animation:none !important;}}
     .imp-testi{transition:transform .4s cubic-bezier(.34,1.56,.5,1), box-shadow .4s ease, border-color .4s ease; position:relative;}
     .imp-testi:hover{transform:scale(1.06) translateY(-8px); box-shadow:0 42px 86px -28px rgba(46,55,255,.6); border-color:rgba(110,116,255,.6); z-index:2;}
     .imp-led{position:relative;border-radius:28px;padding:1.5px;overflow:hidden;background:rgba(255,255,255,.07);display:flex;}
@@ -337,7 +363,7 @@
           <a class="imp-navlink" href="#testimonios">Testimonios</a>
           <a class="imp-navlink" href="#faq">FAQ</a>
         </div>
-        <a class="imp-cta" href="#contacto" style="padding:11px 20px; border-radius:11px; background:linear-gradient(135deg,#FA3601,#F0430A); color:#FDFCFE; font-weight:600; font-size:14.5px; box-shadow:0 10px 24px -10px rgba(250,54,1,.6); white-space:nowrap;">Diagnóstico gratis</a>
+        <a class="imp-cta no-shiny" href="#contacto" style="padding:11px 20px; border-radius:11px; background:linear-gradient(135deg,#FA3601,#F0430A); color:#FDFCFE; font-weight:600; font-size:14.5px; box-shadow:0 10px 24px -10px rgba(250,54,1,.6); white-space:nowrap;">Diagnóstico gratis</a>
       </div>
     </div>
   </nav>
@@ -388,8 +414,7 @@
         <h1 class="hero-t1" style="font-size:clamp(38px,5.2vw,70px); line-height:1.02; font-weight:700; letter-spacing:-.035em; margin:0 0 24px; max-width:720px;">{{ titleNodes }}</h1>
         <p class="hero-anim hero-sub" style="font-size:clamp(16px,1.4vw,19px); line-height:1.6; color:#868CA6; max-width:540px; margin:0 0 38px; font-weight:400;">Marketing, web y automatización con IA en un solo lugar. Hacemos que te encuentren, te escriban y te compren — sin que tengas que estar atrás de todo.</p>
         <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
-          <a class="imp-cta hero-anim hero-btn1" href="#contacto" style="padding:15px 30px; border-radius:13px; background:linear-gradient(135deg,#FA3601,#F0430A); color:#FDFCFE; font-weight:600; font-size:15.5px; box-shadow:0 12px 30px -8px rgba(250,54,1,.55);">Pedí tu diagnóstico gratis →</a>
-          <a class="imp-cta hero-anim hero-btn2" href="#servicios" style="padding:15px 28px; border-radius:13px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.18); color:#FDFCFE; font-weight:600; font-size:15.5px;">Ver servicios</a>
+          <a class="imp-cta shine-only hero-anim hero-btn1" href="#contacto" style="padding:15px 30px; border-radius:13px; background:linear-gradient(135deg,#FA3601,#F0430A); color:#FDFCFE; font-weight:600; font-size:15.5px; box-shadow:0 12px 30px -8px rgba(250,54,1,.55);">Pedí tu diagnóstico gratis →</a>
         </div>
         <p class="hero-anim" style="margin:18px 0 0; font-size:13.5px; color:#868CA6; font-weight:400;">Sin compromiso · Te respondemos en el día</p>
       </div>
@@ -504,7 +529,7 @@
             <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Auditoría y optimización continua</div>
             <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Seguimiento y métricas claras</div>
           </div>
-          <a class="imp-cta" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Quiero más consultas →</a>
+          <a class="imp-cta no-shiny" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Quiero más consultas →</a>
           </div>
         </div>
         <!-- 2 Web -->
@@ -521,7 +546,7 @@
             <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Diseño responsivo</div>
             <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>SEO inicial y analíticas</div>
           </div>
-          <a class="imp-cta" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Crear mi web →</a>
+          <a class="imp-cta no-shiny" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Crear mi web →</a>
           </div>
         </div>
         <!-- 3 Automatizaciones -->
@@ -538,7 +563,7 @@
             <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>CRM y seguimiento</div>
             <div style="display:flex; gap:10px; font-size:14px; color:#C4C8D8;"><span style="color:#2E37FF; flex:none;">✓</span>Dashboards operativos</div>
           </div>
-          <a class="imp-cta" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Automatizar procesos →</a>
+          <a class="imp-cta no-shiny" href="#contacto" style="padding:13px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); text-align:center; font-weight:600; font-size:14.5px; color:#FDFCFE; width:100%;">Automatizar procesos →</a>
           </div>
         </div>
         <!-- 4 Integral DESTACADA -->
@@ -556,7 +581,7 @@
               <div style="display:flex; gap:10px; font-size:14px; color:#FDFCFE;"><span style="color:#6E74FF; flex:none;">✓</span>Medición centralizada</div>
               <div style="display:flex; gap:10px; font-size:14px; color:#FDFCFE;"><span style="color:#6E74FF; flex:none;">✓</span>Escalabilidad y acompañamiento</div>
             </div>
-            <a class="imp-cta" href="#contacto" style="padding:14px; border-radius:12px; background:linear-gradient(135deg,#FA3601,#F0430A); text-align:center; font-weight:700; font-size:14.5px; color:#FDFCFE; box-shadow:0 12px 28px -8px rgba(250,54,1,.6); width:100%;">Armar sistema completo →</a>
+            <a class="imp-cta no-shiny" href="#contacto" style="padding:14px; border-radius:12px; background:linear-gradient(135deg,#FA3601,#F0430A); text-align:center; font-weight:700; font-size:14.5px; color:#FDFCFE; box-shadow:0 12px 28px -8px rgba(250,54,1,.6); width:100%;">Armar sistema completo →</a>
           </div>
         </div>
       </div>
@@ -649,26 +674,79 @@
         <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
         <span style="margin-left:14px; font-size:13px; color:#868CA6; font-weight:500;">Reac Studio · Panel de campañas (ejemplo)</span>
       </div>
-      <div style="padding:32px 36px 40px; display:flex; gap:34px; flex-wrap:wrap;">
-        <div style="flex:0 0 200px;">
-          <div style="font-size:13px; color:#868CA6; margin-bottom:6px;">Leads del mes</div>
-          <div style="font-size:36px; font-weight:700; letter-spacing:-.03em; color:#FDFCFE; margin-bottom:4px;">1.240</div>
-          <div style="display:inline-flex; align-items:center; gap:5px; font-size:13px; color:#FF7A4D; font-weight:600;">▲ +18.4% vs. mes anterior</div>
-          <div style="margin-top:28px; display:flex; flex-direction:column; gap:14px;">
-            <div style="display:flex; align-items:center; gap:10px;"><span style="width:10px;height:10px;border-radius:3px;background:#1F27EB;"></span><span style="font-size:13px;color:#C4C8D8;">Consultas</span></div>
-            <div style="display:flex; align-items:center; gap:10px;"><span style="width:10px;height:10px;border-radius:3px;background:#7C3AED;"></span><span style="font-size:13px;color:#C4C8D8;">Ventas</span></div>
+      <!-- ===== Metric card interactiva (período + vista barras/curva) ===== -->
+      <div style="padding:26px 30px 0;">
+        <!-- header: título + toggle de vista · tendencia + selector de período -->
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div style="display:flex; align-items:center; gap:14px;">
+            <h3 style="font-size:16px; font-weight:700; letter-spacing:-.01em; color:#FDFCFE; margin:0;">Leads del mes</h3>
+            <div style="display:inline-flex; padding:3px; border-radius:10px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);">
+              <span onClick="{{ setCurve }}" style="cursor:pointer; padding:5px 12px; border-radius:7px; font-size:12px; font-weight:600; background:{{ viewCurveBg }}; color:{{ viewCurveCol }}; transition:background .25s ease, color .25s ease;">Curva</span>
+              <span onClick="{{ setBars }}" style="cursor:pointer; padding:5px 12px; border-radius:7px; font-size:12px; font-weight:600; background:{{ viewBarsBg }}; color:{{ viewBarsCol }}; transition:background .25s ease, color .25s ease;">Barras</span>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px;">
+            <span style="display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:{{ metricTrendCol }};">{{ metricTrendArrow }} {{ metricPct }}</span>
+            <div style="position:relative;">
+              <span onClick="{{ togglePeriod }}" class="ib-period" style="cursor:pointer; display:inline-flex; align-items:center; gap:7px; padding:6px 13px; border-radius:9px; background:{{ periodPillBg }}; border:1px solid {{ periodPillBorder }}; font-size:12px; font-weight:600; color:#C4C8D8; transition:border-color .25s ease, background .25s ease;">{{ metricPeriodLabel }} <span style="color:#868CA6; font-size:10px; display:inline-block; transform:rotate({{ periodCaretRot }}); transition:transform .3s cubic-bezier(.16,1,.3,1);">▼</span></span>
+              <div onClick="{{ closePeriod }}" style="position:fixed; inset:0; z-index:40; display:{{ periodOverlayDisplay }};"></div>
+              <div class="ib-period-menu" style="position:absolute; top:calc(100% + 8px); right:0; z-index:50; min-width:196px; padding:6px; border-radius:14px; background:rgba(14,16,32,.97); border:1px solid rgba(255,255,255,.12); box-shadow:0 26px 64px -20px rgba(0,0,0,.85); -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); display:{{ periodMenuDisplay }}; flex-direction:column; gap:2px;">
+                <sc-for list="{{ periodItems }}" as="po" hint-placeholder-count="3">
+                  <span onClick="{{ po.onPick }}" class="ib-period-item" style="cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:10px 12px; border-radius:9px; font-size:13px; font-weight:{{ po.weight }}; color:{{ po.col }}; background:{{ po.bg }}; transition:background .18s ease, color .18s ease;">{{ po.label }} <span style="color:#6E74FF; font-size:13px; opacity:{{ po.checkOpacity }};">✓</span></span>
+                </sc-for>
+              </div>
+            </div>
           </div>
         </div>
-        <div style="flex:1 1 380px; min-width:300px;">
-          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; height:240px; padding-top:30px;">
-            <sc-for list="{{ bars }}" as="bar" hint-placeholder-count="8">
-              <div onMouseEnter="{{ bar.onEnter }}" onMouseLeave="{{ bar.onLeave }}" style="flex:1; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; position:relative; cursor:pointer;">
-                <div style="position:absolute; top:-2px; left:50%; transform:translateX(-50%); padding:6px 10px; border-radius:8px; background:#FDFCFE; color:#0E1020; font-size:12px; font-weight:700; white-space:nowrap; box-shadow:0 6px 16px rgba(0,0,0,.3); opacity:{{ bar.tip }}; transition:opacity .25s ease; pointer-events:none; z-index:3;">{{ bar.v }}<span style="position:absolute; bottom:-4px; left:50%; transform:translateX(-50%) rotate(45deg); width:8px; height:8px; background:#FDFCFE;"></span></div>
-                <div style="width:100%; max-width:34px; height:{{ bar.h }}; border-radius:8px 8px 4px 4px; background:linear-gradient(180deg,#2E37FF,#7C3AED); transform-origin:bottom center; transform:{{ bar.tf }}; opacity:{{ bar.op }}; box-shadow:{{ bar.sh }}; transition:height 1.1s cubic-bezier(.22,1,.36,1) {{ bar.d }}, transform .25s ease, opacity .25s ease, box-shadow .25s ease;"></div>
-              </div>
-            </sc-for>
-          </div>
-          <div style="display:flex; justify-content:space-between; margin-top:14px; padding:0 4px;"><span style="font-size:11px;color:#868CA6;">Lun</span><span style="font-size:11px;color:#868CA6;">Mar</span><span style="font-size:11px;color:#868CA6;">Mié</span><span style="font-size:11px;color:#868CA6;">Jue</span><span style="font-size:11px;color:#868CA6;">Vie</span><span style="font-size:11px;color:#868CA6;">Sáb</span><span style="font-size:11px;color:#868CA6;">Dom</span><span style="font-size:11px;color:#868CA6;">Hoy</span></div>
+
+        <!-- total -->
+        <div style="font-size:clamp(46px,7vw,72px); font-weight:600; line-height:1; letter-spacing:-.03em; color:#FDFCFE; margin:20px 0 5px;">{{ metricTotal }}</div>
+        <div style="font-size:13px; color:#868CA6; margin-bottom:20px;">leads acumulados en el período</div>
+
+        <!-- gráfico -->
+        <div style="position:relative; height:230px;">
+          <!-- capa curva (SVG) -->
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute; inset:0; width:100%; height:100%; opacity:{{ curveOpacity }}; transform:{{ curveTransform }}; transition:opacity .4s ease, transform .6s cubic-bezier(.22,1,.36,1); overflow:visible;">
+            <defs>
+              <linearGradient id="mc-area" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.35"></stop>
+                <stop offset="100%" stop-color="#1F27EB" stop-opacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="mc-line" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#2E37FF"></stop>
+                <stop offset="100%" stop-color="#7C3AED"></stop>
+              </linearGradient>
+            </defs>
+            <path d="{{ metricAreaPath }}" fill="url(#mc-area)"></path>
+            <path d="{{ metricLinePath }}" fill="none" stroke="url(#mc-line)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+          </svg>
+          <!-- capa puntos / barras / hover -->
+          <sc-for list="{{ metricBars }}" as="m" hint-placeholder-count="8">
+            <div onMouseEnter="{{ m.onEnter }}" onMouseLeave="{{ m.onLeave }}" style="position:absolute; top:0; bottom:0; left:{{ m.x }}; width:{{ m.barW }}; transform:translateX(-50%); cursor:pointer; z-index:2;">
+              <div style="position:absolute; top:{{ m.top }}; left:50%; transform:translate(-50%,-130%); padding:6px 10px; border-radius:8px; background:#FDFCFE; color:#0E1020; font-size:12px; font-weight:700; line-height:1.2; text-align:center; white-space:nowrap; box-shadow:0 6px 16px rgba(0,0,0,.35); opacity:{{ m.tip }}; transition:opacity .25s ease; pointer-events:none; z-index:5;">{{ m.v }}<span style="display:block; font-size:10px; font-weight:600; color:#868CA6;">{{ m.date }}</span></div>
+              <div style="position:absolute; left:50%; bottom:0; top:{{ m.top }}; width:100%; transform:translateX(-50%) scaleY({{ m.barScale }}); transform-origin:bottom center; border-radius:7px 7px 3px 3px; background:linear-gradient(180deg,#2E37FF,#7C3AED); opacity:{{ m.barOpacity }}; box-shadow:{{ m.barSh }}; transition:top .6s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1), opacity .3s ease, box-shadow .25s ease;"></div>
+              <div style="position:absolute; left:50%; top:{{ m.top }}; display:{{ m.dotDisplay }}; width:9px; height:9px; border-radius:50%; background:{{ m.dotBg }}; border:2px solid #0E1020; box-shadow:0 0 0 2px rgba(124,58,237,.5); transform:translate(-50%,-50%) scale({{ m.dotScale }}); transition:transform .25s ease, background .25s ease; z-index:4;"></div>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- eje X -->
+        <div style="display:flex; justify-content:space-between; margin-top:12px; padding:0 2px;">
+          <sc-for list="{{ metricAxisLabels }}" as="lbl" hint-placeholder-count="5">
+            <span style="font-size:11px; color:#868CA6;">{{ lbl.t }}</span>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- footer: delta + stats secundarias -->
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-top:18px; padding:16px 30px; border-top:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.02);">
+        <div style="font-size:13px;"><span style="font-weight:700; color:{{ metricTrendCol }};">{{ metricDelta }}</span> <span style="color:#868CA6;">vs. registro previo</span></div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:12px; color:#868CA6;">
+          <span><span style="font-weight:700; color:#C4C8D8;">{{ metricPeak }}</span> pico</span>
+          <span style="opacity:.4;">·</span>
+          <span><span style="font-weight:700; color:#C4C8D8;">{{ metricLow }}</span> mín</span>
+          <span style="opacity:.4;">·</span>
+          <span><span style="font-weight:700; color:#C4C8D8;">{{ metricAvg }}</span> prom</span>
         </div>
       </div>
     </div>
@@ -874,36 +952,43 @@
         <div style="font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.72); margin-bottom:18px;">Hablemos</div>
         <h2 style="font-size:clamp(32px,4.4vw,56px); line-height:1.05; font-weight:800; letter-spacing:-.03em; margin:0 auto 16px; max-width:760px;">Empecemos con un diagnóstico gratis.</h2>
         <p style="font-size:17px; line-height:1.55; color:rgba(255,255,255,.82); max-width:560px; margin:0 auto 36px;">Sin compromiso y sin vueltas: revisamos tu presencia digital y te decimos por dónde conviene empezar.</p>
-        <form id="ct-form" action="https://wa.me/5493544434403" method="get" style="max-width:480px; margin:0 auto 36px; display:flex; flex-direction:column; gap:14px; text-align:left;">
-          <div>
-            <label for="ct-nombre" style="display:block; font-size:13px; font-weight:600; color:rgba(255,255,255,.7); margin-bottom:6px; letter-spacing:.04em;">Nombre</label>
-            <input id="ct-nombre" type="text" name="nombre" required placeholder="Tu nombre" style="width:100%; box-sizing:border-box; padding:13px 16px; border-radius:10px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.07); color:#FDFCFE; font-size:15px; outline:none; font-family:inherit;" />
+        <form id="ct-form" action="mailto:hola@reacstudio.com" method="post" enctype="text/plain" style="max-width:620px; margin:0 auto; display:flex; flex-direction:column; gap:18px; text-align:left;">
+          <div class="ct-grid">
+            <div class="ct-row">
+              <label class="ct-label" for="ct-nombre">Tu nombre</label>
+              <div class="ct-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5"></path></svg>
+                <input id="ct-nombre" class="ct-field" type="text" name="nombre" required autocomplete="name" placeholder="Juan Pérez" />
+              </div>
+            </div>
+            <div class="ct-row">
+              <label class="ct-label" for="ct-email">Email</label>
+              <div class="ct-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="m4 7 8 5.5L20 7"></path></svg>
+                <input id="ct-email" class="ct-field" type="email" name="email" required autocomplete="email" placeholder="vos@ejemplo.com" />
+              </div>
+            </div>
           </div>
-          <div>
-            <label for="ct-servicio" style="display:block; font-size:13px; font-weight:600; color:rgba(255,255,255,.7); margin-bottom:6px; letter-spacing:.04em;">Servicio de interés</label>
-            <select id="ct-servicio" name="servicio" required style="width:100%; box-sizing:border-box; padding:13px 16px; border-radius:10px; border:1px solid rgba(255,255,255,.18); background:rgba(30,20,60,.85); color:#FDFCFE; font-size:15px; outline:none; font-family:inherit; cursor:pointer; appearance:none; -webkit-appearance:none;">
-              <option value="" disabled selected>Seleccioná una opción</option>
-              <option value="marketing-digital">Marketing Digital</option>
-              <option value="desarrollo-web">Desarrollo Web</option>
-              <option value="automatizaciones-ia">Automatizaciones IA</option>
-              <option value="solucion-integral">Solución Integral</option>
-            </select>
+          <div class="ct-row">
+            <label class="ct-label" for="ct-asunto">Asunto</label>
+            <div class="ct-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M8.5 13h7M8.5 16.5h7"></path></svg>
+              <input id="ct-asunto" class="ct-field" type="text" name="asunto" placeholder="Consulta por web / sistema / e-commerce…" />
+            </div>
           </div>
-          <div>
-            <label for="ct-presupuesto" style="display:block; font-size:13px; font-weight:600; color:rgba(255,255,255,.7); margin-bottom:6px; letter-spacing:.04em;">Presupuesto aproximado</label>
-            <select id="ct-presupuesto" name="presupuesto" required style="width:100%; box-sizing:border-box; padding:13px 16px; border-radius:10px; border:1px solid rgba(255,255,255,.18); background:rgba(30,20,60,.85); color:#FDFCFE; font-size:15px; outline:none; font-family:inherit; cursor:pointer; appearance:none; -webkit-appearance:none;">
-              <option value="" disabled selected>Seleccioná una opción</option>
-              <option value="hasta-200">Hasta USD 200</option>
-              <option value="200-500">USD 200–500</option>
-              <option value="500-mas">USD 500+</option>
-            </select>
+          <div class="ct-row">
+            <label class="ct-label" for="ct-mensaje">Mensaje</label>
+            <div class="ct-wrap ct-area">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.3L4 21l1.2-3.6A8.4 8.4 0 1 1 21 11.5z"></path></svg>
+              <textarea id="ct-mensaje" class="ct-field" name="mensaje" required placeholder="Contanos tu proyecto, plazos y qué querés lograr…"></textarea>
+            </div>
           </div>
-          <button type="submit" style="margin-top:4px; padding:15px 28px; border-radius:12px; border:none; cursor:pointer; font-size:16px; font-weight:700; font-family:inherit; color:#FDFCFE; background:linear-gradient(120deg,#FA3601 0%,#d42d00 100%); box-shadow:0 12px 32px -10px rgba(250,54,1,.55); letter-spacing:.01em; transition:opacity .2s;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Pedir diagnóstico gratis</button>
+          <button type="submit" class="ct-send">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:18px; height:18px;"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4 20-7z"></path></svg>
+            Enviar mensaje
+          </button>
+          <p class="ct-note">Tu mensaje se abre en tu cliente de correo, listo para enviar a hola@reacstudio.com. ¿Preferís algo más directo? <a href="https://wa.me/5493544434403?text=Hola%20Reac%20Studio,%20quiero%20un%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener">Escribinos por WhatsApp</a>.</p>
         </form>
-        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-          <a class="imp-cta" href="https://wa.me/5493544434403?text=Hola%20Reac%20Studio,%20quiero%20un%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener" style="padding:16px 32px; border-radius:13px; background:#FDFCFE; color:#1710A5; font-weight:700; font-size:16px; box-shadow:0 16px 40px -14px rgba(0,0,0,.5);">Escribir por WhatsApp</a>
-          <a class="imp-cta" href="mailto:hola@reacstudio.com" style="padding:16px 30px; border-radius:13px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3); color:#FDFCFE; font-weight:600; font-size:16px;">hola@reacstudio.com</a>
-        </div>
       </div>
     </div>
   </section>
@@ -972,6 +1057,9 @@ class Component extends DCLogic {
       showNav: false,
       tipsOn: false,
       hoverBar: null,
+      metricView: 'bars',
+      metricPeriodIdx: 2,
+      periodOpen: false,
       gPct: 0,
       gSales: 0,
       gLeads: 0,
@@ -1173,42 +1261,133 @@ class Component extends DCLogic {
   }
 
   projData(){
-    // ── Caso 1: ejemplo completo (reemplazá foto y textos por un proyecto real) ──
+    // ── Caso 1: Más Servicios (real) · TODO: reemplazá img por la foto que te pase el cliente ──
     const caso1 = {
-      name: 'Estudio Jurídico Rivas',
-      tag: 'Sitio web + captación de clientes',
-      img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
-      cta: 'Ver proyecto',
+      name: 'Más Servicios',
+      tag: 'Sitio web WordPress autogestionable',
+      img: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Ver sitio',
       badge: '',
-      b1t: 'Cliente',        b1d: 'Estudio jurídico boutique en Córdoba, enfocado en derecho laboral.',
-      b2t: 'El desafío',     b2d: 'No recibían consultas por internet: todo el negocio dependía de referidos.',
-      b3t: 'Servicios',      b3d: 'Diseño web, SEO local y formularios de contacto medibles.',
-      b4t: 'Lo que hicimos', b4d: 'Sitio nuevo con una landing por área de práctica y seguimiento de leads.',
-      b5t: 'Resultado',      b5d: '+18% de consultas calificadas por mes y respuesta automática en 2,4 s.',
-      b6t: 'Tiempo',         b6d: 'Entregado en 3 semanas, llave en mano y listo para escalar.'
+      b1t: 'Cliente',        b1d: 'Centro integral de servicios en Villa Dolores, Córdoba: pagos, envíos, cambio y viajes. +10 años y 2 sucursales.',
+      b2t: 'El desafío',     b2d: 'Necesitaban una web profesional que el propio equipo pudiera actualizar sin depender de un programador.',
+      b3t: 'Servicios',      b3d: 'Desarrollo web completo en WordPress (CMS), diseño a medida y capacitación de gestión.',
+      b4t: 'Lo que hicimos', b4d: 'Creamos el sitio entero, 100% autogestionable: servicios, sucursales con mapas, testimonios, FAQ, formularios y WhatsApp.',
+      b5t: 'Resultado',      b5d: 'El cliente edita textos, servicios y secciones por su cuenta. Presencia profesional para +350 operaciones diarias.',
+      b6t: 'Tiempo',         b6d: 'Entregado llave en mano, listo para que lo gestionen ellos mismos.'
     };
-    // ── Casos 2–6: plantillas vacías listas para completar ──
-    const phImgs = [
-      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=1200&auto=format&fit=crop'
-    ];
-    const placeholders = phImgs.map((img, i) => ({
-      name: 'Tu próximo caso',
-      tag: 'Proyecto 0' + (i + 2),
-      img: img,
-      cta: 'Próximamente',
-      badge: 'Próximamente',
-      b1t: 'Cliente',        b1d: 'Completá quién es el cliente y su rubro.',
-      b2t: 'El desafío',     b2d: 'Contá el problema que tenía antes de trabajar con vos.',
-      b3t: 'Servicios',      b3d: 'Listá los servicios que aplicaste en este proyecto.',
-      b4t: 'Lo que hicimos', b4d: 'Resumí la solución que implementaron.',
-      b5t: 'Resultado',      b5d: 'Mostrá el resultado concreto (números, antes / después).',
-      b6t: 'Tiempo',         b6d: 'Indicá cuánto tardó la entrega.'
-    }));
-    return [caso1].concat(placeholders);
+    // ── Caso 2: Calculadora de Divisas · TODO: reemplazá img por screenshot real ──
+    const caso2 = {
+      name: 'Calculadora de Divisas',
+      tag: 'Herramienta web para casas de cambio',
+      img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Código fuente',
+      badge: '',
+      b1t: 'Cliente',        b1d: 'Casas de cambio que cotizan y operan dólar todos los días.',
+      b2t: 'El desafío',     b2d: 'Calcular cotizaciones y componentes del dólar al instante, sin planillas manuales.',
+      b3t: 'Servicios',      b3d: 'Desarrollo web front-end con interfaces editables, listo para integrarse en WordPress.',
+      b4t: 'Lo que hicimos', b4d: 'Calculadora modular con parámetros editables y estructura preparada para embeber en un sitio WordPress.',
+      b5t: 'Resultado',      b5d: 'Cotizaciones inmediatas y autoeditables por el propio operador.',
+      b6t: 'Tiempo',         b6d: 'Entregado con código fuente disponible.'
+    };
+    // ── Caso 3: Detección de Fraude Fiscal · TODO: reemplazá img por screenshot real ──
+    const caso3 = {
+      name: 'Detección de Fraude Fiscal',
+      tag: 'Machine Learning · proyecto académico',
+      img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Código fuente',
+      badge: 'Académico',
+      b1t: 'Cliente',        b1d: 'Proyecto académico de ciencia de datos.',
+      b2t: 'El desafío',     b2d: 'Detectar patrones sospechosos en declaraciones impositivas.',
+      b3t: 'Servicios',      b3d: 'Modelo de clasificación (Machine Learning) desarrollado en Python.',
+      b4t: 'Lo que hicimos', b4d: 'Entrenamos un clasificador que identifica declaraciones con riesgo de fraude a partir de patrones.',
+      b5t: 'Resultado',      b5d: 'Marca automáticamente los casos sospechosos para su revisión.',
+      b6t: 'Tiempo',         b6d: 'Proyecto académico con código fuente disponible.'
+    };
+    // ── Caso 4: E-commerce de Indumentaria · TODO: reemplazá img por screenshot real ──
+    const caso4 = {
+      name: 'E-commerce de Indumentaria',
+      tag: 'Tienda online',
+      img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Ver sitio',
+      badge: '',
+      b1t: 'Cliente',        b1d: 'Marca de indumentaria que necesitaba vender online.',
+      b2t: 'El desafío',     b2d: 'Tener un canal de ventas propio con catálogo y carrito, sin depender de redes sociales.',
+      b3t: 'Servicios',      b3d: 'Desarrollo de e-commerce: catálogo, fichas de producto y carrito de compras.',
+      b4t: 'Lo que hicimos', b4d: 'Tienda con catálogo, detalle de producto y carrito, preparada para integrarse con pasarela de pago.',
+      b5t: 'Resultado',      b5d: 'Canal de ventas online listo para operar y escalar.',
+      b6t: 'Tiempo',         b6d: 'Proyecto entregado y publicado.'
+    };
+    // ── Caso 5: Portfolio Web · TODO: reemplazá img por screenshot real ──
+    const caso5 = {
+      name: 'Portfolio Web',
+      tag: 'Sitio personal · catálogo de servicios',
+      img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Código fuente',
+      badge: '',
+      b1t: 'Cliente',        b1d: 'Desarrollador independiente que necesitaba presencia digital propia.',
+      b2t: 'El desafío',     b2d: 'Presentar servicios y trabajos en un solo lugar, con foco en captar contactos.',
+      b3t: 'Servicios',      b3d: 'Desarrollo web front-end y diseño UI.',
+      b4t: 'Lo que hicimos', b4d: 'Sitio con catálogo de servicios, portfolio, formulario de contacto y enfoque en conversión.',
+      b5t: 'Resultado',      b5d: 'Presencia profesional y un canal de contacto centralizado.',
+      b6t: 'Tiempo',         b6d: 'Entregado con código fuente disponible.'
+    };
+    // ── Caso 6: App de Enfoque Pomodoro · TODO: reemplazá img por screenshot real ──
+    const caso6 = {
+      name: 'App de Enfoque Pomodoro',
+      tag: 'App de escritorio de productividad',
+      img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Código fuente',
+      badge: '',
+      b1t: 'Cliente',        b1d: 'Proyecto propio enfocado en productividad y concentración.',
+      b2t: 'El desafío',     b2d: 'Ayudar a enfocarse y reducir distracciones durante sesiones de estudio o trabajo.',
+      b3t: 'Servicios',      b3d: 'Desarrollo de aplicación de escritorio.',
+      b4t: 'Lo que hicimos', b4d: 'App con modos de estudio, tareas por sesión, historial y estadísticas semanales exportables.',
+      b5t: 'Resultado',      b5d: 'Herramienta de foco con métricas de productividad medibles.',
+      b6t: 'Tiempo',         b6d: 'Entregado con código fuente disponible.'
+    };
+    // ── Caso 7: CRM Comercial · TODO: reemplazá img por screenshot real ──
+    const caso7 = {
+      name: 'CRM Comercial',
+      tag: 'Sistema de gestión web',
+      img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Código fuente',
+      badge: '',
+      b1t: 'Cliente',        b1d: 'Negocios que necesitan ordenar su gestión comercial.',
+      b2t: 'El desafío',     b2d: 'Centralizar clientes, proyectos, leads, pagos y notas en un solo lugar.',
+      b3t: 'Servicios',      b3d: 'Desarrollo de aplicación web a medida (CRM).',
+      b4t: 'Lo que hicimos', b4d: 'CRM completo con seguimiento centralizado de clientes, proyectos, leads, pagos y notas.',
+      b5t: 'Resultado',      b5d: 'Gestión comercial ordenada, trazable y en un solo panel.',
+      b6t: 'Tiempo',         b6d: 'Entregado con código fuente disponible.'
+    };
+    // ── Caso 8: Landing para Profesional · TODO: reemplazá img por screenshot real ──
+    const caso8 = {
+      name: 'Landing para Profesional',
+      tag: 'Landing page de conversión',
+      img: 'https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Ver demo',
+      badge: 'Web',
+      b1t: 'Cliente',        b1d: 'Profesional independiente que ofrece servicios.',
+      b2t: 'El desafío',     b2d: 'Presentar servicios y propuesta de valor con foco en captar contactos.',
+      b3t: 'Servicios',      b3d: 'Diseño y desarrollo de landing (HTML, CSS, JavaScript), responsive y UI/UX.',
+      b4t: 'Lo que hicimos', b4d: 'Landing moderna con propuesta de valor clara, contacto directo y enfoque en conversión.',
+      b5t: 'Resultado',      b5d: 'Página orientada a generar consultas reales.',
+      b6t: 'Tiempo',         b6d: 'Entregado con demo y código fuente disponibles.'
+    };
+    // ── Caso 9: Panel Administrativo Modular · TODO: reemplazá img por screenshot real ──
+    const caso9 = {
+      name: 'Panel Administrativo Modular',
+      tag: 'Sistema interno a medida',
+      img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
+      cta: 'Código fuente',
+      badge: 'Módulos',
+      b1t: 'Cliente',        b1d: 'Negocio local con operaciones internas que ordenar.',
+      b2t: 'El desafío',     b2d: 'Gestionar roles, formularios y reportes operativos en un sistema propio.',
+      b3t: 'Servicios',      b3d: 'Desarrollo backend con PHP, Laravel y MySQL.',
+      b4t: 'Lo que hicimos', b4d: 'Módulo interno con control de roles, formularios y reportes para las operaciones del negocio.',
+      b5t: 'Resultado',      b5d: 'Operación interna centralizada y con permisos por rol.',
+      b6t: 'Tiempo',         b6d: 'Entregado a medida.'
+    };
+    return [caso1, caso2, caso3, caso4, caso5, caso6, caso7, caso8, caso9];
   }
 
   nextProj(){ const n = this.projData().length; this.setState(s => ({ projIndex: (s.projIndex + 1) % n })); }
@@ -1305,23 +1484,98 @@ class Component extends DCLogic {
     ];
     const testimonials = tBase.concat(tBase);
 
-    const heights = [44, 70, 56, 88, 72, 96, 80, 66];
-    const labels = ['142','248','196','410','312','520','398','347'];
-    const peak = heights.indexOf(Math.max.apply(null, heights));
-    const hv = this.state.hoverBar;
-    const bars = heights.map((h, i) => ({
-      h: (this.state.dashInView ? h : 0) + '%',
-      v: labels[i],
-      d: (i * 0.09).toFixed(2) + 's',
-      tip: (hv === i) ? 1 : ((hv === null && this.state.tipsOn && i === peak) ? 1 : 0),
-      tf: (hv === i) ? 'translateY(-4px) scaleX(1.08)' : 'translateY(0) scaleX(1)',
-      op: (hv === null || hv === i) ? 1 : 0.4,
-      sh: (hv === i) ? '0 0 30px rgba(124,58,237,.75)' : '0 0 18px rgba(46,55,255,.4)',
-      onEnter: () => this.setState({ hoverBar: i }),
-      onLeave: () => this.setState({ hoverBar: null })
-    }));
-
     const fmt = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+    // ── Métrica interactiva "Tus resultados" (período + vista barras/curva) ──
+    const mSeries = [
+      { v: 142, date: '01 may' }, { v: 168, date: '03 may' }, { v: 155, date: '05 may' },
+      { v: 196, date: '07 may' }, { v: 210, date: '09 may' }, { v: 188, date: '11 may' },
+      { v: 248, date: '13 may' }, { v: 232, date: '15 may' }, { v: 276, date: '17 may' },
+      { v: 312, date: '19 may' }, { v: 298, date: '21 may' }, { v: 354, date: '23 may' },
+      { v: 410, date: '25 may' }, { v: 468, date: '27 may' }, { v: 520, date: '29 may' }
+    ];
+    const mPeriods = [
+      { label: 'Últimos 7 días', points: 4 },
+      { label: 'Últimos 15 días', points: 7 },
+      { label: 'Últimos 30 días' }
+    ];
+    const mIdx = this.state.metricPeriodIdx;
+    const mOpt = mPeriods[mIdx] || mPeriods[mPeriods.length - 1];
+    const mVis = (mOpt.points && mOpt.points < mSeries.length) ? mSeries.slice(-mOpt.points) : mSeries;
+    const mVals = mVis.map((p) => p.v);
+    const mN = mVals.length;
+    const mLo = Math.min.apply(null, mVals);
+    const mHi = Math.max.apply(null, mVals);
+    const mSpan = (mHi - mLo) || 1;
+    const mSum = mVals.reduce((a, b) => a + b, 0);
+    const mFirst = mVals[0];
+    const mLast = mVals[mN - 1];
+    const mPrev = (mVals[mN - 2] != null) ? mVals[mN - 2] : mFirst;
+    const mNet = mLast - mFirst;
+    const mStep = mLast - mPrev;
+    const mPct = mFirst ? (mNet / mFirst * 100) : 0;
+    const mAvg = Math.round(mSum / mN);
+    const mTrend = (Math.abs(mPct) < 0.5) ? 'flat' : (mNet >= 0 ? 'up' : 'down');
+    const mTrendCol = (mTrend === 'up') ? '#34D399' : (mTrend === 'down') ? '#FB7185' : '#9AA0FF';
+    const mTrendArrow = (mTrend === 'up') ? '▲' : (mTrend === 'down') ? '▼' : '–';
+
+    // Geometría compartida: topPct = posición vertical del punto (desde arriba).
+    const PAD_T = 10, PAD_B = 12, HPAD = 7;
+    const topPct = (v) => PAD_T + (1 - (v - mLo) / mSpan) * (100 - PAD_T - PAD_B);
+    const xPct = (i) => (mN > 1) ? (HPAD + (i / (mN - 1)) * (100 - 2 * HPAD)) : 50;
+
+    const mHv = this.state.hoverBar;
+    const mPeakIdx = mVals.indexOf(mHi);
+    const isBars = this.state.metricView === 'bars';
+    const barW = Math.max(14, Math.min(42, Math.round(560 / mN)));
+
+    const metricBars = mVis.map((p, i) => {
+      const tp = topPct(p.v);
+      const active = (mHv === i);
+      return {
+        x: xPct(i) + '%',
+        top: tp.toFixed(2) + '%',
+        barScale: this.state.dashInView ? 1 : 0,
+        barW: barW + 'px',
+        barOpacity: isBars ? ((mHv === null || active) ? 1 : 0.38) : 0,
+        dotDisplay: isBars ? 'none' : 'block',
+        dotScale: active ? 1.5 : 1,
+        dotBg: active ? '#FDFCFE' : '#7C3AED',
+        v: fmt(p.v),
+        date: p.date,
+        tip: active ? 1 : ((mHv === null && this.state.tipsOn && i === mPeakIdx) ? 1 : 0),
+        barSh: active ? '0 0 30px rgba(124,58,237,.75)' : '0 0 16px rgba(46,55,255,.4)',
+        onEnter: () => this.setState({ hoverBar: i }),
+        onLeave: () => this.setState({ hoverBar: null })
+      };
+    });
+
+    // Path SVG de la curva + área de relleno.
+    const mPts = mVis.map((p, i) => [xPct(i), topPct(p.v)]);
+    const mLinePath = mPts.reduce((d, pt, i) => d + (i ? ' L' : 'M') + pt[0].toFixed(2) + ' ' + pt[1].toFixed(2), '');
+    const mAreaPath = mLinePath + ' L' + xPct(mN - 1).toFixed(2) + ' 100 L' + xPct(0).toFixed(2) + ' 100 Z';
+
+    // Etiquetas del eje X (máx ~6, espaciadas uniformemente).
+    const lblEvery = Math.max(1, Math.ceil(mN / 6));
+    const mAxisLabels = mVis
+      .map((p, i) => ({ t: p.date, i: i }))
+      .filter((o) => (o.i % lblEvery === 0) || (o.i === mN - 1))
+      .map((o) => ({ t: o.t }));
+
+    const cyclePeriod = () => this.setState((s) => ({ metricPeriodIdx: (s.metricPeriodIdx + 1) % mPeriods.length, hoverBar: null }));
+    const periodOpen = this.state.periodOpen;
+    const togglePeriod = () => this.setState((s) => ({ periodOpen: !s.periodOpen }));
+    const closePeriod = () => this.setState({ periodOpen: false });
+    const periodItems = mPeriods.map((p, i) => ({
+      label: p.label,
+      weight: i === mIdx ? '700' : '500',
+      col: i === mIdx ? '#FDFCFE' : '#C4C8D8',
+      bg: i === mIdx ? 'rgba(110,116,255,.14)' : 'transparent',
+      checkOpacity: i === mIdx ? '1' : '0',
+      onPick: () => this.setState({ metricPeriodIdx: i, periodOpen: false, hoverBar: null })
+    }));
+    const setBars = () => this.setState({ metricView: 'bars', hoverBar: null });
+    const setCurve = () => this.setState({ metricView: 'curve', hoverBar: null });
 
     const onGrad = 'linear-gradient(135deg,#1F27EB,#7C3AED)';
     const offTrack = '#15182B';
@@ -1391,7 +1645,36 @@ class Component extends DCLogic {
       pctText: this.state.gPct + '%',
       salesText: '$' + this.state.gSales.toFixed(1) + 'M',
       leadsCountText: fmt(this.state.gLeads),
-      bars,
+      metricBars,
+      metricTotal: fmt(mSum),
+      metricDelta: (mStep >= 0 ? '+' : '−') + fmt(Math.abs(mStep)),
+      metricPct: Math.abs(mPct).toFixed(1) + '%',
+      metricTrendCol: mTrendCol,
+      metricTrendArrow: mTrendArrow,
+      metricPeriodLabel: mOpt.label,
+      togglePeriod,
+      closePeriod,
+      periodItems,
+      periodMenuDisplay: periodOpen ? 'flex' : 'none',
+      periodOverlayDisplay: periodOpen ? 'block' : 'none',
+      periodCaretRot: periodOpen ? '180deg' : '0deg',
+      periodPillBg: periodOpen ? 'rgba(110,116,255,.12)' : 'rgba(255,255,255,.05)',
+      periodPillBorder: periodOpen ? 'rgba(110,116,255,.5)' : 'rgba(255,255,255,.1)',
+      metricPeak: fmt(mHi),
+      metricLow: fmt(mLo),
+      metricAvg: fmt(mAvg),
+      metricLinePath: mLinePath,
+      metricAreaPath: mAreaPath,
+      metricAxisLabels: mAxisLabels,
+      curveOpacity: isBars ? 0 : 1,
+      curveTransform: this.state.dashInView ? 'translateY(0)' : 'translateY(10px)',
+      viewBarsBg: isBars ? 'rgba(255,255,255,.14)' : 'transparent',
+      viewCurveBg: isBars ? 'transparent' : 'rgba(255,255,255,.14)',
+      viewBarsCol: isBars ? '#FDFCFE' : '#868CA6',
+      viewCurveCol: isBars ? '#868CA6' : '#FDFCFE',
+      cyclePeriod,
+      setBars,
+      setCurve,
       steps,
       faqs
     };
@@ -1456,27 +1739,27 @@ class Component extends DCLogic {
 })();
 </script>
 
-<!-- ===== Formulario de contacto → abre WhatsApp con los datos cargados ===== -->
+<!-- ===== Formulario de contacto → abre el cliente de correo con los datos cargados ===== -->
 <script>
 (function(){
-  var WHATSAPP_NUMBER = '5493544434403'; // mismo número del CTA
+  var EMAIL = 'hola@reacstudio.com';
+  function val(form, sel){ var el = form.querySelector(sel); return el ? (el.value || '').trim() : ''; }
   function init(){
     var form = document.getElementById('ct-form');
     if(!form || form.dataset.bound) return;
     form.dataset.bound = '1';
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var nombre = (form.querySelector('#ct-nombre') || {}).value || '';
-      var servicioEl = form.querySelector('#ct-servicio');
-      var presEl = form.querySelector('#ct-presupuesto');
-      var servicio = servicioEl ? (servicioEl.options[servicioEl.selectedIndex] || {}).text : '';
-      var presupuesto = presEl ? (presEl.options[presEl.selectedIndex] || {}).text : '';
-      var msg = 'Hola Reac Studio, quiero un diagnóstico gratis.\n'
-              + '• Nombre: ' + nombre.trim() + '\n'
-              + '• Servicio de interés: ' + servicio + '\n'
-              + '• Presupuesto aproximado: ' + presupuesto;
-      var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
-      window.open(url, '_blank', 'noopener');
+      var nombre = val(form, '#ct-nombre');
+      var email = val(form, '#ct-email');
+      var asunto = val(form, '#ct-asunto');
+      var mensaje = val(form, '#ct-mensaje');
+      var subject = asunto ? ('Consulta web — ' + asunto) : 'Consulta desde la web';
+      var body = 'Nombre: ' + nombre + '\n'
+               + 'Email: ' + email + '\n\n'
+               + mensaje;
+      var url = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = url;
     });
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

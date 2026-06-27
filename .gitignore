@@ -1,2 +1,5 @@
 ECC/
 .claude/
+
+.playwright-mcp/
+__preview.html
